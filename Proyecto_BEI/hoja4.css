@@ -1,3 +1,9 @@
+header{
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: flex;
+}
 body {
     background-image:url(/IMAGENES/Backround_BEI.png) ;
     background-repeat: no-repeat;
@@ -10,9 +16,26 @@ body {
     align-items: center;
     width: 550px;
     height:450px;
-    position: relative;
-
 }
+input[type="verify"] {
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  .p{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 16px;
+    font-style: normal;
+  }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 600;
+}
+
+
 button {
     margin-top: 20px;
     width: 300px;
@@ -24,20 +47,3 @@ button {
     border-radius: 20px;
     font-family: 'Montserrat', 'sans-serif';
   }
-  @font-face {
-    font-family: 'Montserrat';
-    src: url('/IMAGENES/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', 'sans-serif';
-    font-weight: 600;
-}
-
-p {
-    font-family: 'Monserrat', 'sans-serif';
-    font-weight: 400;
-}
-
