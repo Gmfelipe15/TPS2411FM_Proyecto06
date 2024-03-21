@@ -1,14 +1,16 @@
 header{
-    margin: 0 auto;
+    margin bottom: 40px;
     padding: 20px;
     border: 1px solid #ccc;
     display: flex;
+    
 }
 body {
     background-image:url(/IMAGENES/Backround_BEI.png) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    
 }
 .container{
     display: block;
@@ -19,26 +21,31 @@ body {
 }
 input[type="verify"] {
     width: 50%;
-    padding: 20px;
+    padding: 15px;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
     border-radius: 20px;
+    background-color: white;
+    opacity: 0.4;
   }
   .p{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 16px;
     font-style: normal;
+    
   }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', 'sans-serif';
     font-weight: 600;
+    color: white;
 }
 
 
 button {
+    display: block;
     margin-top: 20px;
-    width: 300px;
+    width: 200px;
     padding: 20px;
     background-color: #70D460;
     color: #17412D;
@@ -46,4 +53,13 @@ button {
     cursor: pointer;
     border-radius: 20px;
     font-family: 'Montserrat', 'sans-serif';
+    text-align: center;
   }
+  .diagonal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
