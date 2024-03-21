@@ -1,5 +1,8 @@
 body {
     background-image:url(IMAGENES/BAckround\ BEI.png) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .container{
     display: block;
@@ -8,5 +11,16 @@ body {
     width: 550px;
     height:450px;
     position: relative;
-    
+
 }
+button {
+    margin-top: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: #70D460;
+    color: #17412D;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    font-family: mo;
+  }
