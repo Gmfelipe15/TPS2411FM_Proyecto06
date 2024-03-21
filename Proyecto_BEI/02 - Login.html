@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="CSS/facebook.css" type="">  -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@430&display=swap" rel="stylesheet">
+    
+    <title>BEI</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="LOGOS/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        body {
+            background-image: image();
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        table {
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: auto;
+        }
+        form
+        {
+            padding-left: 65px;
+        } 
+        .descripcion, .texto, .password, .b_primario, .b_secundario, .b_terciario, p {
+            font-family: "Manrope", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+        }
+        img {
+            width: 360px;
+            margin-right: 100px;
+        }
+        .descripcion{
+            padding-bottom: 25px;
+            margin: 0;
+            margin-left: 38px;
+            font-size: 18px;
+        }
+        .contenido {
+            background-color: white;
+            box-shadow: 0px 0px 10px gray;
+            padding: 20px; /*10px/////////*/
+            text-align: center;
+            border-radius: 5px;
+            max-width: 370px;/*//////////*/
+            width: 100%; /*300px //////////*/
+            height: auto;
+        }
+        .footer {
+            border-top: solid 1px #bec3c9;
+            background-color: white;
+            padding-bottom: 10px;
+            padding-top: 20px;
+            
+        }
+        footer {
+            padding-top: 20px;
+            display: flex;
+            align-items: start;
+            flex-grow: 1;
+            justify-content: left;
+            background-color: white;
+            height: 150px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-indent: 20px;
+        }
+        .item {
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            flex-grow: 1;
+            margin-bottom: 50px;
+        
+        }
+
+        #inptext {
+            padding-top: 10px;
+        }
+        .texto, .password {
+            border:solid 1px #bcc2c9;
+            border-radius: 5px;
+            width: 100%; 
+            height: 45px;
+            text-indent: 15px;
+            box-sizing: border-box;
+            font-size: 15px;
+            font-weight: 430;
+            
+        }
+        .b_primario {
+            border-radius: 5px;
+            border: none;
+            width: 100%; /*285px //////////*/
+            background-color: #1877f2;
+            border: none;
+            box-sizing: border-box;
+            margin: 8px 0;
+            
+        }
+        .b_secundario {
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            background-color: #09c431;
+            border: none;
+            box-sizing: border-box;
+        }
+        #botones {
+            line-height: 5px;
+            color: white;
+            font-style: normal;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 430;
+            height: 45px;
+        }
+        .parrafo {
+            margin-top: 40px;
+            padding-left: 0px;
+            text-align: center;
+        }
+        a {
+            font-family: Helvetica, Arial, sans-serif;
+            text-decoration: none;
+            text-align: center;
+        }
+        #espacios {
+            width: 0px;
+            height: 140px;
+        }
+        .piepagina {
+            width: 0px;
+            height: 43px;
+            
+        }
+        .b_terciario {
+            background-color: whitesmoke;
+            border: solid 1px gray;
+            font-size: 15px;
+        }
+        #waza:hover {
+        text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+    <table>
+        
+        <tr>
+            <td><div id="espacios"></div></td>
+        </tr>
+        <tr>
+            <td> 
+                <div id="espacios"></div> 
+            </td>
+            <td>
+                
+                <img class="logo" src="IMAGENES/logofeisbu.svg" alt="feisbu" width="500px">
+                
+                <p class="descripcion"> Feisbuk te ayuda a comunicarte <br>y compartir con las personas <br>que forman parte de tu vida.</p>
+            </td>
+            <td>
+                <form action="https://acortar.link/nE30H4">   
+                    <div class="contenido">
+                    
+                        <div id="inptext">
+                            <input class="texto" type="text" placeholder="Correo electrónico o número de teléfono">     
+                        </div>
+                       <br> 
+                        <div>
+                           <input  class="password" type="password" placeholder="Contraseña">
+                        </div>
+                        <br>
+                        <div>
+                            <input id="botones" class="b_primario" type="submit" value="Iniciar sesión">
+                        </div>
+                        <br>
+                        <div>
+                            <a  id="waza" href="https://acortar.link/nE30H4">¿Olvidaste tu contraseña?</a>
+                        </div>
+                       <br>
+                        <div class="footer">
+                            <input id="botones" class="b_secundario" type="submit" value="Crear cuenta nueva"> <!-- Acciona lo que va a hacer el botón que va subir el formulario -->
+                        </div>
+                    </div>                
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td><p class="parrafo">Crea una página para ti, pa tus amigues o a tu perro, gato, hamster, nevera, <br>lavadora, electrodoméstico y ¡más!</p></td>
+        </tr>
+        
+        
+    </table>
+    
+    <footer>
+        <div class="items">
+            Derechos reservados a Esteban Quintero y disfruta esta página en idiomas:
+            <a id="waza" href="https://acortar.link/nE30H4">Inglés</a>
+            <a id="waza" href="https://acortar.link/nE30H4">Italiano</a>
+            <a id="waza" href="https://acortar.link/nE30H4">Japonés</a>
+            <a id="waza" href="https://acortar.link/nE30H4">Bengalí</a>
+            <a id="waza" href="https://acortar.link/nE30H4">Wachiturro</a>
+            <a id="waza" href="https://acortar.link/nE30H4">Venezolano</a>
+        <button class="b_terciario">+</button>
+        </div>
+    
+    </footer>
+    
+    
+</body> 
+</html>
