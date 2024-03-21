@@ -1,5 +1,5 @@
 body {
-    background-image:url(IMAGENES/BAckround\ BEI.png) ;
+    background-image:url(/IMAGENES/Backround_BEI.png) ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,5 +22,22 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    font-family: mo;
+    font-family: 'Montserrat', 'sans-serif';
   }
+  @font-face {
+    font-family: 'Montserrat';
+    src: url('/IMAGENES/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: 600;
+}
+
+p {
+    font-family: 'Monserrat', 'sans-serif';
+    font-weight: 400;
+}
+
