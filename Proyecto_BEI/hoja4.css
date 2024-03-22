@@ -1,9 +1,15 @@
 header{
-    margin bottom: 40px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    display: flex;
-    
+  height: 70px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 body {
     background-image:url(/IMAGENES/Backround_BEI.png) ;
@@ -28,6 +34,13 @@ input[type="verify"] {
     background-color: white;
     opacity: 0.4;
   }
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
   .p{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
@@ -60,6 +73,11 @@ button {
     justify-content: space-between;
     align-items: center;
 }
+.img1 {
+position: relative;
 
-
-
+}
+.img2 {
+  position: relative;
+  
+  }
