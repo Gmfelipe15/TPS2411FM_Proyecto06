@@ -29,10 +29,10 @@
             left: 0;
             transform: translateY(-50%);
             
-            height: 629px;
+            height: 950px;
             z-index: 1; /* Asegura que la imagen esté sobre otros elementos */
             border-bottom: 0px;
-            width: 500px;
+            width: 850px;
         }
         .header-words {
             position: absolute;
@@ -55,7 +55,6 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            text-align: center;
             margin-right: 10%;
 
         }
@@ -73,7 +72,7 @@
         }
         button {
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #60ec64;
             color: rgb(11, 26, 12);
             transition: background-color 0.3s;
             margin-bottom: 20px;
@@ -85,8 +84,8 @@
 
         .login-button button {
             cursor: pointer;
-            background-color: #082b0b;
-            color: rgb(76, 151, 76);rgb(17, 150, 0)rgb(5, 150, 0)rgb(0, 150, 20)rgb(0, 150, 0)rgb(6, 59, 6)rgb(8, 58, 8)rgb(10, 70, 10)
+            background-color: #011402;
+            color: rgb(135, 187, 135);rgb(17, 150, 0)rgb(5, 150, 0)rgb(0, 150, 20)rgb(0, 150, 0)rgb(6, 59, 6)rgb(8, 58, 8)rgb(10, 70, 10)
             border: none;
             border-radius: 5px;
             padding: 10px 20px;
@@ -112,16 +111,23 @@
         h2{
             color: white;
         }
+        .input {
+            opacity: 0.4;
+        }
 
     </style>
 </head>
 <body>
-    <img class="left-image" src="IMAGENES/Imagen1.png" alt="Imagen Izquierda no seque masxdn`t">
+    <img class="left-image" src="IMAGENES/si.png" alt="Imagen Izquierda no seque masxdn`t">
     <div class="header-words">
         <a href="https://www.instagram.com/reel/C3ahrMdMiZL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-2">TIENDA</a>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
         <a href="https://www.instagram.com/reel/C4rD8q_oN4V/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-2">CONOZCANOS</a>
+        <span></span>
+        <span></span>
         <span></span>
         <span></span>
         <a href="https://www.instagram.com/reel/CzppZIErq3e/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-2">CARRITO</a>
@@ -129,14 +135,14 @@
     <div class="container">
         <h2>Registro</h2>
         <form action="#" method="post">
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required><br>
-            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required><br>
-            <input type="password" id="password" name="password" placeholder="Contraseña" required><br>
+            <input type="text" id="nombre" name="nombre" class="input" placeholder="Nombre" required><br>
+            <input type="email" id="email" name="email" class="input" placeholder="Correo Electrónico" required><br>
+            <input type="password" id="password" name="password" class="input" placeholder="Contraseña" required><br>
             <button type="submit">Registrarse</button>
-            <a href="https://www.instagram.com/reel/C3GfZSJJIom/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-1">Ya tiene una cuenta</a>
+            <a href="https://www.instagram.com/reel/C3GfZSJJIom/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-1">¿YA TIENE UNA CUENTA?</a>
         </form>
         <div class="login-button">
-            <button type="summit">iniciar sesión</button>
+            <button type="summit">Iniciar sesión</button>
         </div>
     </div>
 </body>
