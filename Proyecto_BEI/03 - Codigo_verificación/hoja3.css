@@ -44,7 +44,8 @@ header{
   }
   
   body {
-      background-image:url(/IMAGENES/Backround_BEI.png) ;
+
+      background-image: url(/IMAGENES/Backround_BEI.png);
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
