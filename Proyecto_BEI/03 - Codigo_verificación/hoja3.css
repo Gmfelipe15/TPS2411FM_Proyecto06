@@ -1,5 +1,4 @@
 header{
-    background-color: #17412D;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -44,12 +43,14 @@ header{
   }
   
   body {
-
-      background-image: url(/IMAGENES/Backround_BEI.png);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      
+    background-image: url(IMAGENES/Backround_BEI.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #0b5c0b;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-right: 10%;
   }
   .container{
       display: block;
