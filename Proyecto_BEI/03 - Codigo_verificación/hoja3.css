@@ -1,5 +1,4 @@
 header{
-    background-color: #17412D;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -39,16 +38,19 @@ header{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Jost", sans-serif;
     font-size: 20px;
   }
   
   body {
-      background-image:url(/IMAGENES/Backround_BEI.png) ;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      
+    background-image: url(IMAGENES/Backround_BEI.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #0b5c0b;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-right: 10%;
   }
   .container{
       display: block;
@@ -67,26 +69,26 @@ header{
       opacity: 0.4;
     }
   
-  .Montserrat {
-    font-family: "Montserrat", sans-serif;
+  .Jost {
+    font-family: "Jost", sans-serif;
     font-optical-sizing: auto;
     font-weight: 100;
     font-style: normal;
   }
     .p{
-      font-family: "Montserrat", sans-serif;
+      font-family: "Jost", sans-serif;
       font-optical-sizing: auto;
       font-weight: 16px;
       font-style: normal;
       
     }
    h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', 'sans-serif';
+      font-family: 'Jost', 'sans-serif';
       font-weight: 600;
       color: white;
   }
   h1{
-    font-family: 'Montserrat', 'sans-serif';
+    font-family: 'Jost', 'sans-serif';
     font-weight: 800;
     color: white;
     font-size: 40px; 
@@ -102,7 +104,7 @@ header{
       border: none;
       cursor: pointer;
       border-radius: 20px;
-      font-family: 'Montserrat', 'sans-serif';
+      font-family: 'Jost', 'sans-serif';
       text-align: center;
     }
     .diagonal {
@@ -110,13 +112,8 @@ header{
       justify-content: space-between;
       align-items: center;
   }
-  .img1 {
+  .logo {
   position: relative;
   width: 50%;
   height: auto;
   }
-  .img2 {
-    position: relative;
-    
-    }
-  

@@ -106,19 +106,17 @@ button {
     font-family: 'Montserrat', 'sans-serif';
     text-align: center;
   }
+  button:hover {
+    background-color: #4c9e4c;
+}
   .diagonal {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.img1 {
+.logo {
 position: relative;
 width: 50%;
 height: auto;
 }
-.img2 {
-  position: relative;
-  
-  }
-
 
