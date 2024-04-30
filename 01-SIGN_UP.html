@@ -25,7 +25,7 @@
         }
         .xxx {
             width: 40%;
-            margin-top: 20%;
+            margin-top: 10%;
             margin-left: 25%; 
             
         }
@@ -72,9 +72,9 @@
         .button-2:hover{
             background-color: #2e6e2e;
         }
-        input {
-            opacity: 0.2;
-
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.178);
+            border: none;
         }
         h2{
             color: white;
@@ -96,23 +96,31 @@
         <a class="nav-link" href="#">Carrito</a>
     </li>
 </ul>
-<img class="left-image" src="IMAGENES/LOGO-BEI.png" alt="">  
+<img class="left-image" src="IMAGENES/01.png" alt="">  
 
 <div class="row justify-content-end">
     <div class="col-md-6">
         <form class="xxx">
-            <h2>Registro</h2>
+            <h2>Register</h2>
             <div class="mb-3">
-                <label for="exapleInputName1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="exapleInputName1" required>
+                <label for="text" class="form-label">Name</label>
+                <input type="text" class="form-control" id="text" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+            </div> 
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" required>
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                <label for="direccion" class="form-label">Address</label>
+                <input type="direccion" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Phone</label>
+                <input type="telefono" class="form-control" id="telefono" required>
             </div>
             <button type="submit" class="btn">Registrarse</button>
             <a href="https://www.instagram.com/reel/C3GfZSJJIom/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-1">¿YA TIENE UNA CUENTA?</a>
