@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BEI - Verificación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="FAVI/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="boostrap_online.css">
+    <style>
+
+nav {
+      background-color: rgb(255, 255, 255);
+      background: linear-gradient(rgba(255, 255, 255, 0.248), rgba(0, 0, 0, 0));
+      height: 80px;
+    }
+    #navbarNav { 
+      justify-content: end;
+      padding-right: 20px;
+    }
+    .nav-white {
+      font-weight: 500;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .nav-white:visited {
+      font-weight: 500;
+      color: white;
+    }
+    .nav-white:hover{
+      text-decoration: underline;
+      color: white;
+    }
+        body{
+            background-image: url(IMAGENES/Backround_BEI.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family:"Jost", sans-serif;
+      font-weight:600;
+        }
+        
+        .form{
+            display:flex ;
+            flex-direction: column;
+        }
+        a.primary-button{
+          background-color: #70D460;
+          border-radius: 10px;
+          border: none;
+          color: var(--white);
+          width: 70%;
+          cursor: pointer;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+        }
+        a.login-button{
+            margin-top: 15px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .form-code {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 400px;
+            margin-top: 15%;
+        }
+
+        a.bar{
+           position: relative;
+           display: inline-block;
+           margin-bottom: 1rem;
+           margin-bottom: 0rem;
+           margin-right: auto;
+           opacity: 0.6;
+           text-decoration: none;
+        }
+        .nav-link {
+           color: #ffffff;
+        }
+        .form-code button{
+
+           width: 300px;
+        }
+        .footer-fixed {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 40px;
+      background-color: rgba(166, 192, 114, 0.671);
+      text-align: center;
+    }
+    .footer-fixed .copyright {
+      font-size: 12px;
+    }
+    .footer-fixed a {
+      color: #09140F;
+    }
+    .footer-fixed .redes-sociales {
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .footer-fixed .redes-sociales i {
+      font-size: 18px;
+      margin-right: 5px;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul id="navitems" class="navbar-nav">
+              <li class="nav-item">
+                <a id="tienda" class="nav nav-white" href="index.html">TIENDA</a>
+              </li>
+              <li class="nav-item">
+                <a id="conozcanos" class="nav nav-white" href="12-CONOZCANOS.html">CONOZCANOS</a>
+              </li>
+              <li class="nav-item">
+                <a id="carrito" class="nav nav-white" href="09-CARRITO.html">CARRITO</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+      </header>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="IMAGENES/hombrebolsa.png" alt="Your Image" class="img-fluid">
+          </div>
+          <div class="col-md-6">
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <form>
+                    <form id="verificationForm">
+                      <div class="form-code ">
+                        <h1 class="h3 mb-3 fw-bold text-white">Código de verificación</h1>
+                        <p class="fw-normal text-white">Digite su email para el reestablecimiento de su contraseña:</p>
+                        <div class="form-floating">
+                          <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" required>
+                          <label for="emailInput" class="form -label">ejemplo@gmail.com</label>
+                        </div>
+                      </div>
+                      <div class="form-code button">
+                        <a href="06-VERIFICACION_EXITOSA.html"><button type="submit" class="mt-3  btn btn-lg btn-success">Enviar</button></a>
+                      </div>
+                    </form>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-fixed">
+        <p class="copyright">© 2024 BEI by <a href="#">SYNTAX</a> - Contáctenos: Tel. 318123123 - Mail. asdasdasd@gmail.com </p>
+      </div>  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/@popper"></script>
+</body>
+</html>
