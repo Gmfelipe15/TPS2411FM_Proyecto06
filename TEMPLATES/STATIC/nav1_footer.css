@@ -62,3 +62,27 @@ nav {
 .footer a {
   color: #09140F;
 }
+
+.footer-fixed {
+
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(166, 192, 114, 0.671);
+  padding: 10px 0;
+  text-align: center;
+}
+.footer-fixed .copyright {
+  font-size: 12px;
+}
+.footer-fixed a {
+  color: #09140F;
+}
+.footer-fixed .redes-sociales {
+  display: inline-block;
+  margin-left: 10px;
+}
+.footer-fixed .redes-sociales i {
+  font-size: 18px;
+  margin-right: 5px;
+}
