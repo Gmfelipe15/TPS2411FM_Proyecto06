@@ -1,0 +1,24 @@
+<form class="xxx" action="/actualizar/{{usuarios.0}}" method="POST">
+    <h2>Register</h2>
+    <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input name="name" type="name" class="form-control" id="name" required value="{{ usuarios.1 }}">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required value="{{ usuarios.2 }}">
+    </div> 
+    <div class="mb-3">
+        <label for="password" class="form-label">Contraseña</label>
+        <input name="password" type="password" class="form-control" id="password" required value="{{ usuarios.3 }}">
+    </div>
+    <div class="mb-3">
+        <label for="direccion" class="form-label">Direccion</label>
+        <input name="direccion" type="direccion" class="form-control" id="direccion" required value="{{ usuarios.4 }}">
+    </div>
+    <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input name="telefono" type="telefono" class="form-control" id="telefono" required value="{{ usuarios.5 }}">
+    </div>
+    <button type="submit" class="btn">Editar</button>
+</form>
