@@ -49,10 +49,11 @@ nav {
 /* FOOTER */
 .footer {
       
-  position:absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  height: 40px;
+  padding: 10px;
   background-color: rgba(166, 192, 114, 0.671);
   text-align: center;
 }
@@ -85,4 +86,7 @@ nav {
 .footer-fixed .redes-sociales i {
   font-size: 18px;
   margin-right: 5px;
+}
+.copyright {
+  margin: 0;
 }
