@@ -11,8 +11,14 @@
         <input type="text" name="nombre" placeholder="Nombre del producto"> <br>
         <input type="text" name="descripcion" placeholder="Descripción del producto"> <br>
         <input type="text" name="precio" placeholder="Precio del producto"> <br>
-        <input  title="input" type="number" name="cantidad" class="form-control" value="1" min="1" max="50"> <br>
-        <input type="file" name="image" placeholder="Inserte imagen del producto"> <br>
+        <label><strong>Cantidad >>></strong></label>
+        <input  title="input" type="number" name="cantidad" class="form-control" value="1" min="1" max="50"><br>
+        <input type="file" name="imagen" placeholder="Inserte imagen del producto"> <br>
+        <label for=""><strong>Estado >>></strong></label>
+        <label for="disponible">|| Disponible</label>
+        <input type="radio" name="disponibilidad" value="disponible">
+        <label for="noDisponible">|| No disponible</label>
+        <input type="radio" name="disponibilidad" value="noDisponible"> <br><br>
         <input type="submit" value="Subir">
     </form>
 </body>
