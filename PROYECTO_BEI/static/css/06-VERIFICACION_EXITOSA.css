@@ -1,21 +1,26 @@
-body{
-    background-image: url(IMAGENES/Backround_BEI.png);
+body {
+    background-image: url(../IMAGENES/02-BACKROUND.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family:"Jost", sans-serif;
-    font-weight:600;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
 }
-.form{
-    display:flex ;
+
+.form {
+    display: flex;
     flex-direction: column;
 }
-a.login-button{
+
+a.login-button {
     margin-top: 5%;
     margin-bottom: 3%;
     color: #ffffff;
 }
-a.bar{
+
+a.bar {
     position: relative;
     display: inline-block;
     margin-bottom: 1rem;
@@ -24,15 +29,20 @@ a.bar{
     opacity: 0.6;
     text-decoration: none;
 }
+
 .nav-link {
     color: #ffffff;
 }
+
 #verificacion {
     margin-top: 20%;
+    text-align: center;
 }
+
 .form-control.input-lg {
     width: 45%;
 }
+
 button.btn.btn-primary {
     background-color: #70D460;
     border-color: #70D460;
@@ -40,16 +50,82 @@ button.btn.btn-primary {
     margin-left: 30%;
     width: 40%;
 }
-img[src="IMAGENES/Maquetado_BEI-removebg-preview.png"] {
-    width: 50%; 
-    margin-left:25%;
+
+img[src="../static/IMAGENES/Maquetado_BEI-removebg-preview.png"] {
+    width: 50%;
+    margin-left: 25%;
 }
-img[src="IMAGENES/hombrebolsa.png"] {
-    width: 900px; 
-    height: 750px;
+
+img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png"] {
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
     margin-top: 5%;
     display: block;
+    margin-left: auto; 
+    margin-right: auto;
 }
+
 .form-group h1 {
     text-align: center;
+}
+
+.footer-fixed {
+    position: relative; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.footer-fixed a {
+    color: #70D460;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .navbar-toggler {
+        display: block;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .nav-item {
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #verificacion {
+        margin-top: 10%;
+    }
+
+    .footer-fixed {
+        position: relative; 
+        padding: 15px 0; 
+    }
+}
+
+@media (max-width: 576px) {
+    #verificacion {
+        margin-top: 5%;
+    }
+
+    img[src="../static/IMAGENES/Maquetado_BEI-removebg-preview.png"] {
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    .footer-fixed {
+        padding: 10px 0; 
+    }
 }

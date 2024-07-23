@@ -65,7 +65,7 @@ a.bar {
 }
 .form-control.input-lg {
     width: 100%;
-    max-width: 400px; /* Ajuste para ser más responsivo */
+    max-width: 400px; 
 }
 button.btn.btn-primary {
     background-color: #70D460;
@@ -75,7 +75,7 @@ button.btn.btn-primary {
     max-width: 250px;
 }
 img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png"] {
-    margin-left: 20px; /* Mueve la imagen un poco a la derecha */
+    margin-left: 20px; 
 }
 .footer-fixed {
     position: relative;
@@ -105,7 +105,7 @@ img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-previ
     margin: 0 auto;
 }
 
-/* Responsive design adjustments */
+
 @media (max-width: 768px) {
     .container {
         margin-top: 15%;
@@ -118,7 +118,7 @@ img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-previ
         width: 90%;
     }
     img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png"] {
-        margin-left: 0; /* Quita el margen en pantallas pequeñas */
+        margin-left: 0; 
     }
     .navbar-nav {
         margin-top: 10px;
@@ -135,7 +135,7 @@ img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-previ
     }
 }
 
-/* Estilos para pantallas muy pequeñas */
+
 @media (max-width: 576px) {
     .container {
         margin-top: 10%;
