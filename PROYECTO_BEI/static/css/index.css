@@ -29,8 +29,12 @@ h3 {
     color: whitesmoke;
 }
 h4 {
+    padding: 2%;
+}
+.text {
+    border-radius: 5px;
     justify-content:stretch; 
-    color: whitesmoke;
+    color: #000000;
     background-color: #8ABD82;
 }
 .sections {
