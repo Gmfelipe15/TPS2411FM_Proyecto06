@@ -28,21 +28,20 @@ def signup():
 """
 
     
-#PruebA de poner los datos en una plantilla distinta
-@app.route('/')
+@app.route('/') #Ruta para el home signup
 def signup():
     return render_template('01-SIGN_UP.html')
 
-@app.route('/usuarios')
+@app.route('/usuarios') #Mostrar los datos de usuarios en la tabla 
 def mostrar_usuarios():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM signup')
     datos = cur.fetchall()
     print('datos')
     return render_template('usuarios.html', signup = datos)
-#Fin de la prueba, lo de abajo no hace parte de ella
 
-@app.route('/add_usuario', methods= ['POST'])
+
+@app.route('/add_usuario', methods= ['POST']) #Añadir usuarios en el formulario
 def add():
    if request.method == 'POST':
       name = request.form ['name']
@@ -54,17 +53,17 @@ def add():
       cur.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
       mysql.connection.commit()
       flash('Cuenta creada satisfactoriamente')
-      return redirect(url_for('signup')) #Redirecciona al signup de nuevo, podría ponerse una plantilla de éxito
+      return redirect(url_for('signup')) #Redirecciona al signup de nuevo después de hacer el submit
     #Para empezar a guardar datos
       
 
 
-@app.route('/editar_usuarios/<id>')
+@app.route('/editar_usuarios/<id>') #función para que en la tabla se logre editar información de la basedatos
 def obtener_usuario(id):
    cur = mysql.connection.cursor()
    cur.execute('SELECT * FROM signup WHERE id = %s', (id))
    data = cur.fetchall()
-   return render_template('editar_usuarios.html', usuarios = data[0])
+   return render_template('editar_usuarios.html', usuarios = data[0]) #redirecciona al formulario de editar usuario
 
 @app.route('/actualizar/<id>', methods = ['POST'])
 def actualizar_usuario(id):
@@ -78,7 +77,7 @@ def actualizar_usuario(id):
         cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s WHERE id = %s', (name, email, password, direccion, telefono, id))
         mysql.connection.commit()
         flash('Contacto actualizado satisfactoriamente')
-        return redirect(url_for('signup')) # Al terminar de editar redireccionará al formulario del signup
+        return redirect(url_for('signup')) #Al terminar de editar redireccionará al formulario del signup y se actualizará la info.
 
 @app.route('/eliminar_usuario/<string:id>')
 def eliminar(id):

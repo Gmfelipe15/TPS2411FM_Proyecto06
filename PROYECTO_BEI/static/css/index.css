@@ -1,0 +1,47 @@
+.text-light {
+    background-color:none
+}
+body {
+    background-image:url("../IMAGENES/07-BACKGROUND.png");
+    color: whitesmoke;
+  
+}
+.home {
+    color: whitesmoke;
+    text-indent: 20px;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+.texthome {
+    text-indent: 30px;
+    color: #8ABD82;
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 30px;
+
+
+    
+}
+h3 {
+    color: whitesmoke;
+}
+h4 {
+    padding: 2%;
+}
+.text {
+    border-radius: 5px;
+    justify-content:stretch; 
+    color: #000000;
+    background-color: #8ABD82;
+}
+.sections {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+
+}
+.btn_1 {
+    background-color:#8ABD82; border-color:#0F2B1E; color: white;
+}

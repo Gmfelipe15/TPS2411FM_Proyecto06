@@ -7,18 +7,24 @@ body {
     font-family:"Jost", sans-serif;
     font-weight:600;
 }
-
+.one{
+margin-right: 200px;
+}
 .xxx {
-    width: 90%;
-    margin-left: 50px;
-    margin-top: 50px;
-    padding: 20px;
+    width: 100%;
     border-radius: 10px;
     background-color: #17412d8a;
+    color: white;
+    top: 50%; /* Move the element 50% from the top of the page */
+    left: 50%;
+    margin-right: 50%;
 }
 
 .mb-3 {
     color: white;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+
 }
 
 .left-image {
@@ -31,7 +37,7 @@ body {
     z-index: 1;
     border-bottom: 0px;
     width: 700px;
-    max-width: 100%; /* Ajusta el ancho a la pantalla */
+    max-width: 956px; /* Ajusta el ancho a la pantalla */
 
 }
 
@@ -39,7 +45,7 @@ body {
     cursor: pointer;
     background-color: #60ec64 !important;
     color: #2e6e2e;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
@@ -59,9 +65,9 @@ body {
     cursor: pointer;
     background-color:#2e6e2e;
     color: rgb(135, 187, 135);
-    margin-top: 10px;
-    margin-left: 5%;
-    width: 90%;
+    margin-top: 2px;
+    
+    width: 100%;
     border: none;
     border-radius: 5px;
     height: 40px;
