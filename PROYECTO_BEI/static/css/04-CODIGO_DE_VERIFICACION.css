@@ -84,7 +84,6 @@ nav {
       width: 300px;
   }
   .footer-fixed {
-    /* position: absolute; */
     align-self: absolute;
     bottom: 0;
     width: 100%;
