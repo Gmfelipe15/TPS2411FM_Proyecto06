@@ -1,34 +1,43 @@
 body {
-    /* background-image: url(IMAGENES/Backround_BEII.png); */
-    background-image:url(../IMAGENES/02-BACKROUND.png);
-
+    background-image: url(IMAGENES/Backround_BEII.png);
+    flex-direction: column;
 }
+/* HOLAAAAAAAAAAAAAAAAAA */
 .xxx {
-    width: 40%;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 10%;
-    margin-left: 25%; 
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
+
 .mb-3 {
     color: white;
 }
+
 .left-image {
     position: absolute;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    height: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
     z-index: 1;
     border-bottom: 0px;
-    width: 40%;
+    width: 700px;
+    max-width: 100%; /* Ajusta el ancho a la pantalla */
+    display: none; /* Oculta la imagen por defecto */
 }
+
 .btn {
     cursor: pointer;
-    background-color: #60ec64;
-    color: black;
+    background-color: #60ec64 !important;
+    color: #2e6e2e;
     margin-bottom: 25px;
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
+   
 }
 .btn:hover {
     background-color: #2e6e2e;
@@ -36,27 +45,63 @@ body {
 .link-1{
     text-decoration: none;
     color: white;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
 }
 .button-2{
     cursor: pointer;
-    background-color:#011402;
+    background-color:#2e6e2e;
     color: rgb(135, 187, 135);
     margin-top: 10px;
-    margin-left: 150px;
-    width: 45%;
+    margin-left: 5%;
+    width: 90%;
     border: none;
     border-radius: 5px;
     height: 40px;
+    position: static;
+
 }
 .button-2:hover{
     background-color: #2e6e2e;
 }
 .form-control {
-    background-color: rgba(255, 255, 255, 0.178);
+    background-color: rgb(255, 255, 255);
     border: none;
+    border-bottom: 2px solid white; /* Agrega un borde inferior blanco */
+    padding: 10px;
+    margin-bottom: 10px;
 }
 h2{
     color: white;
     font-family:"Jost", sans-serif;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .left-image {
+        display: block;
+        height: 300px; /* Ajusta el alto según tu preferencia */
+        width: 100%; /* Ancho completo de la pantalla */
+    }
+    .xxx {
+        width: 95%;
+        margin-left: 2.5%; /* Ajusta el margen según tu preferencia */
+    }
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 480px) {
+    .left-image {
+        height: 200px; /* Ajusta el alto según tu preferencia */
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 320px) {
+    .left-image {
+        height: 150px; /* Ajusta el alto según tu preferencia */
+    }
 }
