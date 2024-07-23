@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="STATIC/nav1_footer.css" type="">
-    <link rel="stylesheet" href="STATIC/05-CAMBIO_DE_CONTRASEÑA.css"> 
+    <link rel="stylesheet" href="../static/css/05-CAMBIO_DE_CONTRASEÑA.css">
+    <link rel="stylesheet" href="../static/css/nav1_footer.css"> 
 
     <title>BEI - Cambiar contraseña</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,8 +38,8 @@
                         <li class="nav-item">
                             <a class="nav nav-white" id="perfil" href="02-LOGIN.html">LOGIN</a>
                         </li>
-                          <li class="nav-item">
-                            <a class="nav nav-white" id="perfil" href="01-SIGN_UP.html">SIGNUP</a>
+                        <li class="nav-item">
+                            <a class="nav nav-white" id="signup" href="01-SIGN_UP.html">SIGNUP</a>
                         </li>
                     </ul>
                 </div>
@@ -47,39 +47,43 @@
         </nav>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="IMAGENES/hombrebolsa.png" alt="Your Image" class="img-fluid">
-            </div>
-            <div class="col-md-6">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <form id="needs-validation">
-                                <div class="form-group">
-                                    <h1 class="h3 mb-3 fw-bold text-white">Restablecer la contraseña</h1>
-                                    <p class="fw-normal text-white">Digite su nueva contraseña:</p>
-                                    <input class="form-control input-lg" placeholder="********" type="password" id="newpw" required>
-                                    <p class="fw-normal text-white">Repita su nueva contraseña:</p>
-                                    <input class="form-control input-lg" placeholder="********" type="password"  id="confirmpw" required>
-                                    <p class="mb-4" style="color: #FF0000" id="campo"></p>
-                                    <a href="03-VERIFICACION_CORREO.html"></a>
-                                    <button class="btn btn-primary fw-bold">Confirmar</button>
-                                </div>
-                            </form>  
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <img src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png" alt="Your Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <form id="needs-validation">
+                                    <div class="form-group">
+                                        <h1 class="h3 mb-3 fw-bold text-white">Restablecer la contraseña</h1>
+                                        <p class="fw-normal text-white">Digite su nueva contraseña:</p>
+                                        <input class="form-control input-lg" placeholder="********" type="password" id="newpw" required>
+                                        <p class="fw-normal text-white">Repita su nueva contraseña:</p>
+                                        <input class="form-control input-lg" placeholder="********" type="password" id="confirmpw" required>
+                                        <p class="mb-4" style="color: #FF0000" id="campo"></p>
+                                        <a href="03-VERIFICACION_CORREO.html"></a>
+                                        <button class="btn btn-primary fw-bold">Confirmar</button>
+                                    </div>
+                                </form>  
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="footer-fixed">
-        <p class="copyright">© 2024 BEI by <a href="#">SYNTAX</a> - Contáctenos: Tel. 318123123 - Mail. asdasdasd
+    </main>
 
-      </script>
+    <footer class="footer-fixed">
+        <p class="copyright">© 2024 BEI by <a href="#">SYNTAX</a> - Contáctenos: Tel. 318123123 - Mail. asdasdasd</p>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/@popper"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
