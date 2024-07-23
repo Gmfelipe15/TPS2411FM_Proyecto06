@@ -31,7 +31,29 @@ nav {
     font-weight:600;
     
   }
-  
+  .container-fluid {
+    max-width: 1200px; /* adjust the max width to your liking */
+    margin: 0 auto; /* center the container */
+    padding: 20px; /* add some padding */
+  }
+
+  /* Center the image */
+ .my-image-container {
+    text-align: center; /* center the image */
+  }
+
+ .my-image {
+    max-width: 100%; /* make the image responsive */
+    height: auto;
+    margin: 20px auto; /* add some margin */
+  }
+
+  /* Form container */
+ .form-container {
+    max-width: 400px; /* adjust the max width to your liking */
+    margin: 0 auto; /* center the form container */
+    padding: 20px; /* add some padding */
+  }
   .form{
       display:flex ;
       flex-direction: column;
@@ -60,12 +82,10 @@ nav {
     width: 400px;
     margin-top: 15%;
   }
-  .img-fluid{
-    width: 900px; 
-    height: 7550px;
-    margin-top: 5%;
-    display: block;
-  
+  .my-image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
   }
 
   a.bar{
