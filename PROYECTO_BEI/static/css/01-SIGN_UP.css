@@ -49,6 +49,9 @@ margin-right: 200px;
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+
     
 }
 .btn:hover {
@@ -63,7 +66,7 @@ margin-right: 200px;
 }
 .button-2{
     cursor: pointer;
-    background-color:#2e6e2e;
+    background-color:#09140F;
     color: rgb(135, 187, 135);
     margin-top: 2px;
     
@@ -72,10 +75,13 @@ margin-right: 200px;
     border-radius: 5px;
     height: 40px;
     position: static;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+
 
 }
 .button-2:hover{
-    background-color: #2e6e2e;
+    background-color: #0a170a;
 }
 .form-control {
     background-color: rgb(255, 255, 255);
