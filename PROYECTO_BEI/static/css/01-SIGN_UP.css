@@ -1,15 +1,20 @@
 body {
     background-image: url(IMAGENES/Backround_BEII.png);
     flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
 }
-/* HOLAAAAAAAAAAAAAAAAAA */
+
 .xxx {
     width: 90%;
-    margin-left: 5%;
-    margin-top: 10%;
+    margin-left: 50px;
+    margin-top: 50px;
     padding: 20px;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #17412d8a;
 }
 
 .mb-3 {
@@ -17,16 +22,17 @@ body {
 }
 
 .left-image {
+    align-self: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-800px, -50%);
     height: 700px;
     z-index: 1;
     border-bottom: 0px;
     width: 700px;
     max-width: 100%; /* Ajusta el ancho a la pantalla */
-    display: none; /* Oculta la imagen por defecto */
+
 }
 
 .btn {
@@ -37,7 +43,7 @@ body {
     width: 100%;
     border-radius: 5px;
     margin-top: 10px;
-   
+    
 }
 .btn:hover {
     background-color: #2e6e2e;
