@@ -18,27 +18,33 @@ nav {
     font-weight: 500;
     color: white;
 }
-.nav-white:hover{
+.nav-white:hover {
     text-decoration: underline;
     color: white;
 }
 .navbar-toggler {
     background-color: rgb(221, 221, 221);
 }
-body{
-    background-image: url(IMAGENES/Backround_BEI.png);
+body {
+    background-image: url(../IMAGENES/02-BACKROUND.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    font-family:"Jost", sans-serif;
-    font-weight:600;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-.form{
-    display:flex ;
+main {
+    flex: 1;
+}
+.form {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
-a.bar{
+a.bar {
     position: relative;
     display: inline-block;
     margin-bottom: 1rem;
@@ -50,30 +56,29 @@ a.bar{
 .nav-link {
     color: #ffffff;
 }
-.container{
+.container {
     margin-top: 25%;
 }
-.needs-validation{
+.needs-validation {
     margin-left: 25%;
     margin-top: 25%;
 }
 .form-control.input-lg {
-    width: 45%;
+    width: 100%;
+    max-width: 400px; /* Ajuste para ser más responsivo */
 }
 button.btn.btn-primary {
     background-color: #70D460;
     border-color: #70D460;
     color: #17412D;
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
 }
-img[src="IMAGENES/hombrebolsa.png"] {
-    width: 900px; 
-    height: 750px;
-    margin-top: 5%;
-    display: block;
+img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png"] {
+    margin-left: 20px; /* Mueve la imagen un poco a la derecha */
 }
 .footer-fixed {
-    align-self: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     height: 40px;
@@ -98,4 +103,51 @@ img[src="IMAGENES/hombrebolsa.png"] {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 15%;
+    }
+    .needs-validation {
+        margin-left: 10%;
+        margin-top: 10%;
+    }
+    .form-control.input-lg {
+        width: 90%;
+    }
+    img[src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png"] {
+        margin-left: 0; /* Quita el margen en pantallas pequeñas */
+    }
+    .navbar-nav {
+        margin-top: 10px;
+    }
+    .navbar-toggler {
+        margin-right: 10px;
+    }
+    .footer-fixed {
+        height: auto;
+        padding: 10px 0;
+    }
+    .footer-fixed .copyright {
+        font-size: 10px;
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 576px) {
+    .container {
+        margin-top: 10%;
+    }
+    .needs-validation {
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    .form-control.input-lg {
+        width: 100%;
+    }
+    .footer-fixed .copyright {
+        font-size: 9px;
+    }
 }
