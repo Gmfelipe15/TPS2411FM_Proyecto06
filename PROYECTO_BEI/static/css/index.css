@@ -1,0 +1,17 @@
+.text-light {
+    background-color:none
+}
+body {
+    background-image:url("../IMAGENES/07-BACKGROUND.png");  
+}
+h1 {
+    text-align:center;
+}
+h4 {
+    justify-content:stretch; 
+    color: whitesmoke;
+    background-color: #8ABD82;
+}
+.btn_1 {
+    background-color:#8ABD82; border-color:#0F2B1E; color: white;
+}
