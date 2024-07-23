@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/01-SIGN_UP.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav1_footer.css') }}"> 
+    <link rel="stylesheet" href="../static/css/01-SIGN_UP.css">
+    <link rel="stylesheet" href="../static/css/nav1_footer.css"> 
  
 
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
@@ -43,8 +43,7 @@
       </div>
     </div>
   </nav>
-<img class="left-image" src="{{ url_for('static', filename='IMAGENES/01.png') }}" alt="logo">  
-
+<img class="left-image" src="../static/IMAGENES/01.png" alt="logo">  
 <div class="row justify-content-end">
     <div class="col-md-6">
       {% with messages = get_flashed_messages() %}

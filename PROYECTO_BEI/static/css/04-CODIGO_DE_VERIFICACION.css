@@ -23,12 +23,13 @@ nav {
     color: white;
   }
   body{
-    background-image: url(IMAGENES/Backround_BEI.png);
+    background-image: url(../IMAGENES/02-BACKROUND.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     font-family:"Jost", sans-serif;
     font-weight:600;
+    
   }
   
   .form{
@@ -59,13 +60,14 @@ nav {
     width: 400px;
     margin-top: 15%;
   }
-  img[src="IMAGENES/hombrebolsa.png"] {
+  .img-fluid{
     width: 900px; 
-    height: 750px;
+    height: 7550px;
     margin-top: 5%;
     display: block;
   
   }
+
   a.bar{
     position: relative;
     display: inline-block;
@@ -88,18 +90,23 @@ nav {
     height: 40px;
     background-color: rgba(166, 192, 114, 0.671);
     text-align: center;
-  }
-  .footer-fixed .copyright {
+}
+.footer-fixed .copyright {
     font-size: 12px;
-  }
-  .footer-fixed a {
+}
+.footer-fixed a {
     color: #09140F;
-  }
-  .footer-fixed .redes-sociales {
+}
+.footer-fixed .redes-sociales {
     display: inline-block;
     margin-left: 10px;
-  }
-  .footer-fixed .redes-sociales i {
+}
+.footer-fixed .redes-sociales i {
     font-size: 18px;
     margin-right: 5px;
-  }
+}
+.form-group {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
