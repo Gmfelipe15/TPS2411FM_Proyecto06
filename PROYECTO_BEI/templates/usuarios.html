@@ -1,31 +1,29 @@
-<table>
-    <th>
-      <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Password</td>
-        <td>Direccion</td>
-        <td>Telefono</td>
-        <td>Permiso</td> <!-- Tipo de usuario -->
-        <td>Operations</td>
-      </tr>
-      <tbody>
-        {% for signups in signup %}
-        <tr>
-          <td>{{ signups.0 }}</td>
-          <td>{{ signups.1 }}</td>
-          <td>{{ signups.2 }}</td>
-          <td>{{ signups.3 }}</td>
-          <td>{{ signups.4 }}</td>
-          <td>{{ signups.5 }}</td>
-          <td>{{ signups.6 }}</td> <!-- el tipo de permiso que debería tener el usuario CLIENTE o ADMIN -->
-          <td>
-            <a href="/editar_usuarios/{{signups.0}}">Editar</a>
-            <a href="/eliminar_usuario/{{signups.0}}">Eliminar</a>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </th>
-  </table>
+<table border="2px">
+  <tr>
+    <td>ID</td>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Password</td>
+    <td>Direccion</td>
+    <td>Telefono</td>
+    <td>Permiso</td> <!-- Tipo de usuario -->
+    <td>Operations</td>
+  </tr>
+  <tbody>
+    {% for signups in signup %}
+    <tr>
+      <td>{{ signups.0 }}</td>
+      <td>{{ signups.1 }}</td>
+      <td>{{ signups.2 }}</td>
+      <td>{{ signups.3 }}</td>
+      <td>{{ signups.4 }}</td>
+      <td>{{ signups.5 }}</td>
+      <td>{{ signups.6 }}</td> <!-- el tipo de permiso que debería tener el usuario CLIENTE o ADMIN -->
+      <td>
+        <a href="/editar_usuarios/{{signups.0}}">Editar</a>
+        <a href="/eliminar_usuario/{{signups.0}}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>    
+</table>
