@@ -1,0 +1,18 @@
+body {
+    background-image: url(../IMAGENES/07-BACKGROUND.png); 
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    position: relative;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+    color: white;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ffffff; /* Bordes más gruesos */
+}
+
