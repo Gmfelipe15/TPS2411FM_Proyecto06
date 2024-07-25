@@ -8,16 +8,16 @@ body {
     font-weight:600;
 }
 .one{
-margin-right: 200px;
+margin: 10%;
 }
 .xxx {
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     background-color: #17412d8a;
     color: white;
     top: 50%; /* Move the element 50% from the top of the page */
     left: 50%;
-    margin-right: 50%;
+    
 }
 
 .mb-3 {
@@ -28,15 +28,17 @@ margin-right: 200px;
 }
 
 .left-image {
+    background-color: #8ABD82;
+    border-radius: 50%;
     align-self: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-800px, -50%);
-    height: 700px;
+    height: 500px;
     z-index: 1;
     border-bottom: 0px;
-    width: 700px;
+    width: 500px;
     max-width: 956px; /* Ajusta el ancho a la pantalla */
 
 }
@@ -52,7 +54,6 @@ margin-right: 200px;
     font-family:"Jost", sans-serif;
     font-weight:600;
 
-    
 }
 .btn:hover {
     background-color: #2e6e2e;
@@ -100,26 +101,39 @@ h2{
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .left-image {
-        display: block;
-        height: 300px; /* Ajusta el alto según tu preferencia */
-        width: 100%; /* Ancho completo de la pantalla */
+      position: static; /* Cambia la posición a static */
+      height: 200px; /* Ajusta el alto */
+      width: 100%; /* Ajusta el ancho */
+      margin-bottom: 20px; /* Agrega un margen inferior para separar la imagen del formulario */
     }
     .xxx {
-        width: 95%;
-        margin-left: 2.5%; /* Ajusta el margen según tu preferencia */
+      width: 95%; /* Ajusta el ancho del formulario */
+      margin-left: 2.5%; /* Ajusta el margen izquierdo del formulario */
+      padding: 20px; /* Agrega un padding para separar la imagen del formulario */
     }
-}
-
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 480px) {
+    .form-control {
+      width: 100%; /* Ajusta el ancho de los inputs */
+    }
+  }
+  
+  /* Estilos para pantallas más pequeñas */
+  @media (max-width: 480px) {
     .left-image {
-        height: 200px; /* Ajusta el alto según tu preferencia */
+      height: 150px; /* Ajusta el alto de la imagen */
     }
-}
-
-/* Estilos para pantallas muy pequeñas */
-@media (max-width: 320px) {
+    .xxx {
+      width: 90%; /* Ajusta el ancho del formulario */
+      margin-left: 5%; /* Ajusta el margen izquierdo del formulario */
+    }
+  }
+  
+  /* Estilos para pantallas muy pequeñas */
+  @media (max-width: 320px) {
     .left-image {
-        height: 150px; /* Ajusta el alto según tu preferencia */
+      height: 100px; /* Ajusta el alto de la imagen */
     }
-}
+    .xxx {
+      width: 85%; /* Ajusta el ancho del formulario */
+      margin-left: 7.5%; /* Ajusta el margen izquierdo del formulario */
+    }
+  }
