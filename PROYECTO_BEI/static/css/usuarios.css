@@ -1,18 +1,28 @@
 body {
-    background-image: url(../IMAGENES/07-BACKGROUND.png); 
+  background-image: url(../IMAGENES/07-BACKGROUND.png);
+  font-family: 'Jost', sans-serif;
 }
+
 table {
-    border-collapse: collapse;
-    width: 100%;
-    position: relative;
-    font-family:"Jost", sans-serif;
-    font-weight:600;
-    color: white;
+  width: 100%;
+  background-color: #8abd82;
 }
 
 th, td {
-    text-align: left;
-    padding: 8px;
-    border: 1px solid #ffffff; /* Bordes más gruesos */
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ffffff;
+}
+th{
+    background-color: #2e6e2e;
+    color: white;
 }
 
+.btn-custom {
+  background-color: #60ec64;
+  color: #2e6e2e;
+}
+h1{
+    color: #ffffff;
+    text-align: center;
+}

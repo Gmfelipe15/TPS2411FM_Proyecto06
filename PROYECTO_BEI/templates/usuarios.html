@@ -4,40 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../static/css/usuarios.css">
 </head>
 <body>
-  <link rel="stylesheet" href="../static/css/usuarios.css"> 
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+  <h1>TABLA DE USUARIOS Y ACCIONES</h1>
+<div class="container mt-5">
+  <table class="table table-bordered table-striped">
+    <thead class="">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Contraseña</th>
+        <th>Dirección</th>
+        <th>Teléfono</th>
+        <th>Permiso</th> <!-- Tipo de usuario -->
+        <th>Operaciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for signups in signup %}
+      <tr>
+        <td>{{ signups.0 }}</td>
+        <td>{{ signups.1 }}</td>
+        <td>{{ signups.2 }}</td>
+        <td>{{ signups.3 }}</td>
+        <td>{{ signups.4 }}</td>
+        <td>{{ signups.5 }}</td>
+        <td>{{ signups.6 }}</td> <!-- el tipo de permiso que debería tener el usuario CLIENTE o ADMIN -->
+        <td>
+          <a href="/editar_usuarios/{{signups.0}}" class="btn btn-sm btn-custom">Editar</a>
+          <a href="/eliminar_usuario/{{signups.0}}" class="btn btn-sm btn-danger">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>    
+  </table>
+</div>
 
-<table border="2px">
-  <tr>
-    <td>ID</td>
-    <td>Name</td>
-    <td>Email</td>
-    <td>Password</td>
-    <td>Direccion</td>
-    <td>Telefono</td>
-    <td>Permiso</td> <!-- Tipo de usuario -->
-    <td>Operations</td>
-  </tr>
-  <tbody>
-    {% for signups in signup %}
-    <tr>
-      <td>{{ signups.0 }}</td>
-      <td>{{ signups.1 }}</td>
-      <td>{{ signups.2 }}</td>
-      <td>{{ signups.3 }}</td>
-      <td>{{ signups.4 }}</td>
-      <td>{{ signups.5 }}</td>
-      <td>{{ signups.6 }}</td> <!-- el tipo de permiso que debería tener el usuario CLIENTE o ADMIN -->
-      <td>
-        <a href="/editar_usuarios/{{signups.0}}">Editar</a>
-        <a href="/eliminar_usuario/{{signups.0}}">Eliminar</a>
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>    
-</table>
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
