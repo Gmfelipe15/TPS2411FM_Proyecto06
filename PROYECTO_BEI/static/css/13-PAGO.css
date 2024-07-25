@@ -1,5 +1,5 @@
 body {
-    background-image:url("IMAGENES/07-BACKGROUND.png");
+    background-image:url("../IMAGENES/07-BACKGROUND.png");
    }
 .container{
     background-color: #8ABD82; 
@@ -22,6 +22,18 @@ img{
   }
 .btn-lg{
     color: black; border: solid black 1px; background-color: #8DCF82;
+  }
+  
+  .btn {
+    background-color: #09140F;
+    color: #8dcf82;
+    border:solid #70D460;
+    text-decoration: none;
+  }
+  .btn:hover {
+    box-shadow: 0px 0px 10px #17412D;
+    text-decoration: none;
+
   }
 .footer-fixed{
     color: #09140F; 

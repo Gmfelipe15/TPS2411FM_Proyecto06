@@ -31,6 +31,14 @@ h3 {
 h4 {
     padding: 2%;
 }
+.col-sm-5{
+    background-color: #8ABD82;
+    max-width:fit-content;
+    margin: 5px;
+    margin-bottom: 10px;
+    max-width: 20px;
+
+}
 .text {
     border-radius: 5px;
     justify-content:stretch; 
@@ -41,6 +49,9 @@ h4 {
     font-family: "Jost", sans-serif;
     font-weight: 500;
 
+}
+.container-fluid {
+    margin-right: 20px;
 }
 .btn_1 {
     background-color:#8ABD82; border-color:#0F2B1E; color: white;
