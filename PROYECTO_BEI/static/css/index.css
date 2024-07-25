@@ -31,6 +31,14 @@ h3 {
 h4 {
     padding: 2%;
 }
+.col-sm-5{
+    background-color: #8ABD82;
+    max-width:fit-content;
+    margin: 5px;
+    margin-bottom: 10px;
+    max-width: 20px;
+
+}
 .text {
     border-radius: 5px;
     justify-content:stretch; 
