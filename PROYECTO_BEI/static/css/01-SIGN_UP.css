@@ -11,6 +11,13 @@ body {
 margin: 10%;
 padding: 20px;
 }
+.python {
+    background-color:#09140F;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+    font-size: larger;
+    color: azure;
+}
 .xxx {
     width: 100%;
     border-radius: 10px;
