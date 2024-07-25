@@ -8,16 +8,17 @@ body {
     font-weight:600;
 }
 .one{
-margin-right: 200px;
+margin: 10%;
+padding: 20px;
 }
 .xxx {
     width: 100%;
     border-radius: 10px;
     background-color: #17412d8a;
     color: white;
-    top: 50%; /* Move the element 50% from the top of the page */
+    /* top: 50%; Move the element 50% from the top of the page */
     left: 50%;
-    margin-right: 50%;
+
 }
 
 .mb-3 {
@@ -28,15 +29,17 @@ margin-right: 200px;
 }
 
 .left-image {
+    background-color: #8ABD82;
+    border-radius: 50%;
     align-self: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-800px, -50%);
-    height: 700px;
+    height: 500px;
     z-index: 1;
-    border-bottom: 0px;
-    width: 700px;
+    margin-bottom: 1%;
+    width: 500px;
     max-width: 956px; /* Ajusta el ancho a la pantalla */
 
 }
@@ -52,7 +55,6 @@ margin-right: 200px;
     font-family:"Jost", sans-serif;
     font-weight:600;
 
-    
 }
 .btn:hover {
     background-color: #2e6e2e;
@@ -69,7 +71,6 @@ margin-right: 200px;
     background-color:#09140F;
     color: rgb(135, 187, 135);
     margin-top: 2px;
-    
     width: 100%;
     border: none;
     border-radius: 5px;
@@ -95,31 +96,4 @@ h2{
     font-family:"Jost", sans-serif;
     margin-bottom: 20px;
     text-align: center;
-}
-
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .left-image {
-        display: block;
-        height: 300px; /* Ajusta el alto según tu preferencia */
-        width: 100%; /* Ancho completo de la pantalla */
-    }
-    .xxx {
-        width: 95%;
-        margin-left: 2.5%; /* Ajusta el margen según tu preferencia */
-    }
-}
-
-/* Estilos para pantallas más pequeñas */
-@media (max-width: 480px) {
-    .left-image {
-        height: 200px; /* Ajusta el alto según tu preferencia */
-    }
-}
-
-/* Estilos para pantallas muy pequeñas */
-@media (max-width: 320px) {
-    .left-image {
-        height: 150px; /* Ajusta el alto según tu preferencia */
-    }
 }
