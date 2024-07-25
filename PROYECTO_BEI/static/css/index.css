@@ -50,6 +50,9 @@ h4 {
     font-weight: 500;
 
 }
+.container-fluid {
+    margin-right: 20px;
+}
 .btn_1 {
     background-color:#8ABD82; border-color:#0F2B1E; color: white;
 }
