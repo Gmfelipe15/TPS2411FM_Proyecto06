@@ -14,11 +14,8 @@ body {
     backdrop-filter: blur(10px);
   }
 }
-.navbar-brand {
-  margin-left: -10%;
-}
 .offcanvas-body {
-  margin-right: -14%;
+  margin-right: -15%;
 }
 .producto {
   width: 370px;
