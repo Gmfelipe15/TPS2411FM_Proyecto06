@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2024 a las 18:28:56
+-- Tiempo de generación: 30-07-2024 a las 18:54:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bei`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `contactus`
+--
+
+CREATE TABLE `contactus` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -49,21 +62,33 @@ CREATE TABLE `signup` (
   `email` varchar(150) NOT NULL,
   `password` varchar(150) NOT NULL,
   `direccion` varchar(200) NOT NULL,
-  `telefono` varchar(50) NOT NULL
+  `telefono` varchar(50) NOT NULL,
+  `tipo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `signup`
 --
 
-INSERT INTO `signup` (`id`, `name`, `email`, `password`, `direccion`, `telefono`) VALUES
-(3, 'a_SEPUDOEDITAAAR', 'a3di74rrr@gm.com', 'asasas', 'SELOGROEDITAR', 'assass'),
-(5, 'qqq', 'esteban.quintero699@edcionbogota.edu.co', '3eroooo', 'cra 101 assda', '423343'),
-(7, 'XAAAAAA', 'aeaeae@gm.com', 'AAAAAAAAAAA', 'AAA', '444');
+INSERT INTO `signup` (`id`, `name`, `email`, `password`, `direccion`, `telefono`, `tipo`) VALUES
+(3, 'oliwis', 'a3di74rrr@gm.com', 'asasas', 'SELOGROEDITAR', 'assass', 'ADMIN'),
+(5, 'NUEVO USER5', 'esteban.quintero699@edcionbogota.edu.co', '3eroooo', 'cra 101 assda', '423343', 'CLIENTE'),
+(7, 'XAAAAAA', 'aeaeae@gm.com', 'AAAAAAAAAAA', 'AAA', '444', 'CLIENTE'),
+(8, 'JUANDAPEDRAZALEON', 'xxesteban@gm.com', 'AAAAAAAA', 'KRA 101 c', '12121212', 'CLIENTE'),
+(9, 'ESTEBITANN', 'estebaaaquin500@mail.com', 'AAAAA', 'XXESTEBANXX', '12345678909876', 'CLIENTE'),
+(10, 'PIPEPUNK', 'luifelipelecra@gg.com', 'DANIELMUÑOZ', 'socratescalle1', '989898989', 'CLIENTE'),
+(11, 'GABRIELEPINILLA', 'xxestean@gm.com', 'GABRIELLE', '12121', '2222222', 'ADMIN'),
+(12, 'ADMINISTRADOR', 'admin@admin.admin', 'admin', 'admin123muñoz', '4dm1n', 'ADMIN');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `contactus`
+--
+ALTER TABLE `contactus`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `productos`
@@ -82,6 +107,12 @@ ALTER TABLE `signup`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `contactus`
+--
+ALTER TABLE `contactus`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
@@ -91,7 +122,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT de la tabla `signup`
 --
 ALTER TABLE `signup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

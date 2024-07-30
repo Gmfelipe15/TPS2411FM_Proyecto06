@@ -1,0 +1,25 @@
+body {
+    background-image: url(../IMAGENES/08-BACKROUND.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+}
+.container {
+    background-color: #8ABD82; /* Fondo gris claro */
+    padding: 20px;
+    border-radius: 10px;
+}
+.btn {
+    background-color: #09140F;
+    color: #8dcf82;
+    border:solid #70D460;
+}
+.btn:hover {
+    background-color: #09140F;
+    color: #8dcf82;
+    border:solid #70D460;
+    box-shadow: 0px 0px 10px #17412D;
+
+}
