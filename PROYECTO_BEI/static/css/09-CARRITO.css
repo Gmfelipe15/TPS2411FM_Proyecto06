@@ -3,10 +3,10 @@ body {
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-position: center;
-
   background-size: cover;
   font-family:"Jost", sans-serif;
   font-weight:600;
+  
 }
 @media(max-width: 991px){
   .sidebar{
@@ -14,9 +14,7 @@ body {
     backdrop-filter: blur(10px);
   }
 }
-.offcanvas-body {
-  margin-right: -15%;
-}
+
 .producto {
   width: 370px;
   height: auto;
@@ -24,6 +22,7 @@ body {
   margin: auto auto auto auto;
   justify-content: center;
 }
+
 .col-md-5{
   background-color: #09140F;
 }
