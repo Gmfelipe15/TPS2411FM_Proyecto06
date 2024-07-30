@@ -2,44 +2,44 @@ body {
   margin-top: 20px;
   background: #2a8b2fda url(../IMAGENES/07-BACKGROUND.png) no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
 }
 
 .col-lg-6 {
+  margin-bottom: 30px;
   color: white;
 }
 .payment-img {
   width: 100px;
   height: auto;
   margin: 10px;
-  border-radius: 8px; /* Bordes redondeados */
+  border-radius: 8px; 
 }
 
 .payment-container {
-  border: 3px solid #58ce5c; /* Borde verde */
-  border-radius: 10px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  background-color: rgba(88, 206, 92, 0.2); /* Fondo verde claro */
-  margin-bottom: 20px; /* Espacio inferior */
-}
+  border: 3px solid #58ce5c; 
+  border-radius: 10px; 
+  padding: 20px; 
+  background-color: rgba(88, 206, 92, 0.2); 
+  margin-bottom: 20px;}
 
 .btn-success {
   color: #fff;
-  background-color: #004d00; /* Verde oscuro */
+  background-color: #004d00; 
   border: none;
-  border-radius: 12px; /* Bordes más redondeados */
-  padding: 10px 20px; /* Espaciado interno */
-  font-size: 1rem; /* Tamaño de fuente */
+  border-radius: 12px; 
+  padding: 10px 20px; 
+  font-size: 1rem;
   transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .btn-success:hover {
-  background-color: #003300; /* Verde más oscuro al pasar el mouse */
-  transform: scale(1.05); /* Aumento de tamaño al pasar el mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumenta la sombra al pasar el mouse */
+  background-color: #003300; 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
 }
 
 .payment-img {
@@ -50,12 +50,12 @@ body {
 
 .footer-fixed {
   position: relative;
-  margin-top: auto; /* Empuja el footer al final de la página */
+  margin-top: auto; 
   width: 100%;
-  height: 60px; /* Ajusta la altura del footer */
+  height: 60px; 
   background-color: rgba(166, 192, 114, 0.671);
   text-align: center;
-  padding: 10px 0; /* Agrega espaciado vertical */
+  padding: 10px 0; 
 }
 
 .footer-fixed .copyright {
@@ -66,7 +66,7 @@ body {
   color: #09140F;
 }
 
-/* Media Queries */
+
 @media (max-width: 768px) {
   .btn-group-lg, .btn, .btn-lg {
     padding: 0.6rem 1.5rem;
