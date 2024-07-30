@@ -40,7 +40,7 @@ def mostrar_usuarios():
     print('datos')
     return render_template('usuarios.html', signup = datos)
 
-
+      
 @app.route('/add_usuario', methods= ['POST']) #Añadir usuarios en el formulario
 def add():
    if request.method == 'POST':
