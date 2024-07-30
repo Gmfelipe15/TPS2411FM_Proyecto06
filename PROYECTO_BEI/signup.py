@@ -16,18 +16,6 @@ mysql = MySQL(app)
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
 
-#Código original de poner la tabla de usuarios con el mismo formulario, no borrar hasta que salga todo bien
-""""
-@app.route('/')
-def signup():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM signup')
-    datos = cur.fetchall()
-    print('datos')
-    return render_template('01-SIGN_UP.html', signup = datos)
-"""
-
-    
 @app.route('/') #Ruta para el home signup
 def signup():
     return render_template('01-SIGN_UP.html')
@@ -40,7 +28,7 @@ def mostrar_usuarios():
     print('datos')
     return render_template('usuarios.html', signup = datos)
 
-
+      
 @app.route('/add_usuario', methods= ['POST']) #Añadir usuarios en el formulario
 def add():
    if request.method == 'POST':
@@ -61,7 +49,7 @@ def add():
 @app.route('/editar_usuarios/<id>') #función para que en la tabla se logre editar información de la basedatos
 def obtener_usuario(id):
    cur = mysql.connection.cursor()
-   cur.execute('SELECT * FROM signup WHERE id = %s', (id))
+   cur.execute('SELECT * FROM signup WHERE id = %s', [id])
    data = cur.fetchall()
    return render_template('editar_usuarios.html', usuarios = data[0]) #redirecciona al formulario de editar usuario
 
@@ -73,11 +61,12 @@ def actualizar_usuario(id):
         password = request.form ['password']
         direccion = request.form ['direccion']
         telefono = request.form ['telefono']
+        tipo = request.form ['tipo']
         cur = mysql.connection.cursor()
-        cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s WHERE id = %s', (name, email, password, direccion, telefono, id))
+        cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s, tipo = %s WHERE id = %s', (name, email, password, direccion, telefono, tipo, id))
         mysql.connection.commit()
         flash('Contacto actualizado satisfactoriamente')
-        return redirect(url_for('signup')) #Al terminar de editar redireccionará al formulario del signup y se actualizará la info.
+        return redirect(url_for('mostrar_usuarios')) #Al terminar de editar redireccionará a la tabla de usuarios esto poniendo el def que se puso anteriormente
 
 @app.route('/eliminar_usuario/<string:id>')
 def eliminar(id):
