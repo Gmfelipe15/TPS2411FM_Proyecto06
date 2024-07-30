@@ -1,50 +1,131 @@
 body {
-    background-image:url("../IMAGENES/07-BACKGROUND.png");
-   }
-.container{
-    background-color: #8ABD82; 
-    width: 600px; 
-    height: 500px; 
-    border-radius: 4%; 
-    margin-top: 6%;
-  }
-h1 {
-    color: white; margin-top: 5%; margin-bottom: 17%;
-  }
-table{
-    margin-left: 10%; margin-right: 10%;
-  }
-img{
-    border-radius: 10px; margin-right: 10px;
-  }
-.d-flex{
-    margin-top: 23%;
-  }
-.btn-lg{
-    color: black; border: solid black 1px; background-color: #8DCF82;
-  }
-  
-  .btn {
-    background-color: #09140F;
-    color: #8dcf82;
-    border:solid #70D460;
-    text-decoration: none;
-  }
-  .btn:hover {
-    box-shadow: 0px 0px 10px #17412D;
-    text-decoration: none;
+  margin-top: 20px;
+  background: #2a8b2fda url(../IMAGENES/07-BACKGROUND.png) no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+}
 
+.col-lg-6 {
+  margin-bottom: 30px;
+  color: white;
+}
+.payment-img {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+  border-radius: 8px; 
+}
+
+.payment-container {
+  border: 3px solid #58ce5c; 
+  border-radius: 10px; 
+  padding: 20px; 
+  background-color: rgba(88, 206, 92, 0.2); 
+  margin-bottom: 20px;}
+
+.btn-success {
+  color: #fff;
+  background-color: #004d00; 
+  border: none;
+  border-radius: 12px; 
+  padding: 10px 20px; 
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.btn-success:hover {
+  background-color: #003300; 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); 
+}
+
+.payment-img {
+  width: 100px;
+  height: auto;
+  margin: 10px;
+}
+
+.footer-fixed {
+  position: relative;
+  margin-top: auto; 
+  width: 100%;
+  height: 60px; 
+  background-color: rgba(166, 192, 114, 0.671);
+  text-align: center;
+  padding: 10px 0; 
+}
+
+.footer-fixed .copyright {
+  font-size: 12px;
+}
+
+.footer-fixed a {
+  color: #09140F;
+}
+
+
+@media (max-width: 768px) {
+  .btn-group-lg, .btn, .btn-lg {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
   }
-.footer-fixed{
-    color: #09140F; 
-    display: inline-block; 
-    margin-left: 10px; 
-    font-size: 18px;
-    margin-right: 5px; 
-    position:fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    background-color: rgba(166, 192, 114, 0.671);
-   text-align: center;
+
+  .text-uppercase-bold-sm {
+    font-size: 0.75rem!important;
   }
+
+  .mt-5 {
+    margin-top: 2rem!important;
+  }
+
+  .p-5 {
+    padding: 2rem!important;
+  }
+
+  #contenedor {
+    width: 90%;
+  }
+
+  img[src="IMAGENES/11.png"] {
+    width: 100px;
+  }
+
+  .footer-fixed {
+    height: auto;
+    padding: 10px;
+  }
+
+  .footer-fixed .copyright {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .btn-group-lg, .btn, .btn-lg {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .text-uppercase-bold-sm {
+    font-size: 0.7rem!important;
+  }
+
+  .mt-5 {
+    margin-top: 1.5rem!important;
+  }
+
+  .p-5 {
+    padding: 1.5rem!important;
+  }
+
+  #contenedor {
+    width: 95%;
+  }
+
+  img[src="IMAGENES/11.png"] {
+    width: 80px;
+  }
+}
