@@ -16,7 +16,11 @@ mysql = MySQL(app)
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
 
-@app.route('/') #Ruta para el home signup
+@app.route('/')#Ruta para el home signup
+def index():
+   return render_template('index.html')
+
+@app.route('/signup') 
 def signup():
     return render_template('01-SIGN_UP.html')
 
@@ -78,7 +82,7 @@ def eliminar(id):
 
 #Conexión al formulario de contacto
 
-@app.route('/12-CONOZCANOS.html') #Ruta para el formulario de contacto
+@app.route('/conozcanos') #Ruta para el formulario de contacto
 def conozcanos():
     return render_template('12-CONOZCANOS.html')
 
@@ -93,6 +97,13 @@ def add_message():
       mysql.connection.commit()
       flash('Mensaje enviado satisfactoriamente')
       return redirect(url_for('conozcanos'))
+   
+@app.route('/mensajes') #Mostrar los datos de usuarios en la tabla 
+def mostrar_mensajes():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contactus')
+    data = cur.fetchall()
+    return render_template('mensajes.html', mensajes = data)
 
 if __name__=='__main__':
  app.run(debug=True)
