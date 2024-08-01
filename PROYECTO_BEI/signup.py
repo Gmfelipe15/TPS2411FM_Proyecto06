@@ -106,8 +106,13 @@ def mostrar_mensajes():
     return render_template('mensajes.html', mensajes = data) #la variablE mensajes va a contener los datos que tiene data entonces en jinja
 
 @app.route('/carrito') 
-def signup():
+def carrito():
     return render_template('09-CARRITO.html')
+
+@app.route('/login') 
+def login():
+    return render_template('02-LOGIN.html')
+
 
 if __name__=='__main__':
  app.run(debug=True)
