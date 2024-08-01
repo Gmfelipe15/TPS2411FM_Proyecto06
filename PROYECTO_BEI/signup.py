@@ -113,6 +113,13 @@ def carrito():
 def login():
     return render_template('02-LOGIN.html')
 
+@app.route('/pago') 
+def pago():
+    return render_template('13-PAGO.html')
+
+@app.route('/factura') 
+def factura():
+    return render_template('11-FACTURA.html')
 
 if __name__=='__main__':
  app.run(debug=True)
