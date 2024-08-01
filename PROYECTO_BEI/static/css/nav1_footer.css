@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -52,11 +56,12 @@ nav {
 }
 
 /* FOOTER */
-.footer {
-      
-  position: fixed;
+.footer { 
+  padding-bottom: 81px;
+  position:fixed;
+  margin-top: auto;
+  left:0px;
   bottom: 0;
-  left: 0;
   width: 100%;
   padding: 10px;
   background-color: rgba(166, 192, 114, 0.671);
@@ -70,13 +75,12 @@ nav {
 }
 
 .footer-fixed {
-
-  bottom: 0;
+  margin-bottom: 0;
   width: 100%;
   height: 40px;
   background-color: rgba(166, 192, 114, 0.671);
-  padding: 10px 0;
   text-align: center;
+  padding: 10px;
 }
 .footer-fixed .copyright {
   font-size: 12px;
