@@ -102,8 +102,8 @@ def add_message():
 def mostrar_mensajes():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contactus')
-    data = cur.fetchall()
-    return render_template('mensajes.html', mensajes = data)
+    data = cur.fetchall() #data es igual a todos los datos de la BD
+    return render_template('mensajes.html', mensajes = data) #la variablE mensajes va a contener los datos que tiene data entonces en jinja 
 
 if __name__=='__main__':
  app.run(debug=True)
