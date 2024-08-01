@@ -121,5 +121,10 @@ def pago():
 def factura():
     return render_template('11-FACTURA.html')
 
+@app.route('/producto') 
+def producto():
+    return render_template('08-PRODUCT.html')
+
+
 if __name__=='__main__':
  app.run(debug=True)
