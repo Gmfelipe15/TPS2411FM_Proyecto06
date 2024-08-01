@@ -1,0 +1,25 @@
+
+    body {
+        background-color: #343a40;
+        background-image: url(../IMAGENES/07-BACKGROUND.png);
+        font-family: 'Jost', sans-serif;
+        color: white;
+    }
+    
+    .form-label, h2, label {
+        color: white;
+    }
+    
+    .form-container {
+        max-width: 500px;
+        margin: auto;
+        padding: 20px;
+        background-color: #2e6e2e;
+        border-radius: 10px;
+    }
+    
+    .btn {
+        background-color: #8abd82;
+        color: white;
+    }
+    
