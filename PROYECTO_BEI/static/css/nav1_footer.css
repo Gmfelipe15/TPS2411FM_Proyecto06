@@ -1,10 +1,17 @@
-/* CSS general de todas las páginas */
 body {
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-position: center;
   background-size: cover;
   font-family:"Jost", sans-serif;
   font-weight:600;
+}
+@media(max-width: 991px){
+  .sidebar{
+    background-color: #17412D;
+    backdrop-filter: blur(10px);
+  }
 }
 #logo {
   align-self: center;
@@ -38,9 +45,7 @@ nav {
   text-decoration: underline;
   color: white;
 }
-.navbar-toggler {
-  background-color: rgb(221, 221, 221);
-}
+
 #perfil{
   color: #8ABD82;
   font-weight: bold;
@@ -90,3 +95,4 @@ nav {
 .copyright {
   margin: 0;
 }
+
