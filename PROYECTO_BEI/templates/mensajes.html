@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN - Mensajes</title>
+</head>
+<body>
+    <h1>TABLA DE MENSAJES DE CONTACTO</h1>
+  <div class="container mt-5">
+    <table class="table table-bordered table-striped" border="1px">
+      <thead class="">
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Mensaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mensaje in mensajes %}
+        <tr>
+          <td>{{ mensaje.1 }}</td>
+          <td>{{ mensaje.2 }}</td>
+          <td>{{ mensaje.3 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>    
+    </table>
+  
+</body>
+</html>
