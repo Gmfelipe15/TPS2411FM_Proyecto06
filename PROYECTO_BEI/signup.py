@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash #,config
 from flask_mysqldb import MySQL
-import mysql.connector
+# import mysql.connector
 
 #from app import obtener_usuarios
 
@@ -75,6 +75,24 @@ def eliminar(id):
    mysql.connection.commit()
    flash('Contacto removido satisfactoriamente')
    return redirect(url_for('mostrar_usuarios'))
+
+#Conexión al formulario de contacto
+
+@app.route('/12-CONOZCANOS.html') #Ruta para el formulario de contacto
+def conozcanos():
+    return render_template('12-CONOZCANOS.html')
+
+@app.route('/add_message', methods = ['POST'])
+def add_message():
+   if request.method == 'POST':
+      name = request.form ['name']
+      email = request.form ['email']
+      message = request.form ['message']
+      cur = mysql.connection.cursor()
+      cur.execute('INSERT INTO contactus (name, email, message) VALUES (%s, %s, %s)', (name, email, message))
+      mysql.connection.commit()
+      flash('Mensaje enviado satisfactoriamente')
+      return redirect(url_for('conozcanos'))
 
 if __name__=='__main__':
  app.run(debug=True)
