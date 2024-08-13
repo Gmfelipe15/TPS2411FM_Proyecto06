@@ -129,5 +129,12 @@ def producto():
     return render_template('08-PRODUCT.html')
 
 
+@app.route('/protect')
+def protect():
+    if 'nombre' in session and 'email' in session:
+        return render_template('protect.html')
+    else:
+        return redirect(url_for('login'))
+
 if __name__=='__main__':
  app.run(debug=True)
