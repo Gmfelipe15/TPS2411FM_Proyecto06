@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session url_for, flash #,config
+from flask import Flask, render_template, request, redirect, session url_for, flash # config
 from flask_mysqldb import MySQL
 from flask_session import Session
 # import mysql.connector
@@ -129,12 +129,22 @@ def producto():
     return render_template('08-PRODUCT.html')
 
 
-@app.route('/protect')
+# Seguridad
+    
+@app.route('/usuarios')
+def usuarios():
+    if 'nombre' in session and 'email' in session:
+        return render_template('usuarios.html')
+    else:
+        return redirect(url_for('login'))
+    
+@app.route('/usuarios')
 def protect():
     if 'nombre' in session and 'email' in session:
         return render_template('protect.html')
     else:
         return redirect(url_for('login'))
+
 
 if __name__=='__main__':
  app.run(debug=True)
