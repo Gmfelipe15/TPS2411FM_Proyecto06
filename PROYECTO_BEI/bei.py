@@ -131,19 +131,12 @@ def producto():
 
 # Seguridad
     
-@app.route('/usuarios')
-def usuarios():
-    if 'nombre' in session and 'email' in session:
-        return render_template('homeadmins.html')
-    else:
-        return redirect(url_for('login'))
-    
-@app.route('/login')
-def login():
+@app.route('/homeadmin')
+def homeadmin():
     if 'nombre' in session and 'email' in session:
         return render_template('homeadmin.html')
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('homeadmin'))
 
 
 if __name__=='__main__':
