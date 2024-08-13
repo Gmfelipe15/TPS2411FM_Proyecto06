@@ -134,14 +134,14 @@ def producto():
 @app.route('/usuarios')
 def usuarios():
     if 'nombre' in session and 'email' in session:
-        return render_template('usuarios.html')
+        return render_template('homeadmins.html')
     else:
         return redirect(url_for('login'))
     
-@app.route('/usuarios')
-def protect():
+@app.route('/login')
+def login():
     if 'nombre' in session and 'email' in session:
-        return render_template('protect.html')
+        return render_template('homeadmin.html')
     else:
         return redirect(url_for('login'))
 
