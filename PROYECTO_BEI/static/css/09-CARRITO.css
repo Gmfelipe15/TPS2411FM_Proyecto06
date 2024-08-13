@@ -5,8 +5,8 @@ body {
   background-position: center;
   background-size: cover;
   font-family:"Jost", sans-serif;
-  font-weight:600;
-  
+  font-weight:600px;
+  position: relative;
 }
 @media(max-width: 991px){
   .sidebar{
