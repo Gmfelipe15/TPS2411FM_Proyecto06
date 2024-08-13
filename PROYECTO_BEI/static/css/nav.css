@@ -1,0 +1,59 @@
+html {
+    height: 100%;
+  }
+  body {
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
+    position: relative;
+    padding-bottom: 2em;
+    min-height: 100vh;
+  }
+  @media(max-width: 991px){
+    .sidebar{
+      background-color: #17412D;
+      backdrop-filter: blur(10px);
+    }
+  }
+  #logo {
+    align-self: center;
+  }
+  .img-fluid {
+    background-color: rgb(192, 238, 195);
+    border-radius: 40%;
+    width: 300px;
+  }
+  nav {
+    background-color: rgb(255, 255, 255);
+    background: linear-gradient(rgba(255, 255, 255, 0.248), rgba(0, 0, 0, 0));
+    height: 80px;
+  }
+  #navbarNav { 
+    justify-content: end;
+    padding-right: 20px;
+  }
+  .nav-white {
+    font-weight: 500px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .nav-white:visited {
+    font-weight: 500px;
+    color: white;
+  }
+  .nav-white:hover{
+    text-decoration: underline;
+    color: white;
+  }
+  
+  #perfil{
+    color: #8ABD82;
+    font-weight: bold;
+  }
