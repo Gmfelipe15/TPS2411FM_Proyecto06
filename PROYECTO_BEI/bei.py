@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, flash # config
+from flask import Flask, render_template, request, redirect, session,  url_for, flash # config
 from flask_mysqldb import MySQL
 from flask_session import Session
 # import mysql.connector
@@ -136,7 +136,7 @@ def homeadmin():
     if 'nombre' in session and 'email' in session:
         return render_template('homeadmin.html')
     else:
-        return redirect(url_for('homeadmin'))
+        return redirect(url_for('login'))
 
 
 if __name__=='__main__':
