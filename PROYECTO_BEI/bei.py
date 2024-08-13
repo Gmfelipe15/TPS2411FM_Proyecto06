@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, flash #,config
+from flask import Flask, render_template, request, redirect, session url_for, flash #,config
 from flask_mysqldb import MySQL
+from flask_session import Session
 # import mysql.connector
 
 #from app import obtener_usuarios
@@ -15,6 +16,8 @@ mysql = MySQL(app)
 
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
 
 @app.route('/')#Ruta para el home signup
 def index():
