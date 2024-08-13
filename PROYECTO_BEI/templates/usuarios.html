@@ -15,6 +15,11 @@
   <link rel="stylesheet" href="../static/css/usuarios.css">
 </head>
 <body>
+  <a href=".{.{ url_for('usuarios') }}">a</a>
+  <a href=".{.{ url_for('subir_producto') }}">b</a>
+  <a href=".{.{ url_for('mensajes') }}">c</a>
+  <a href=".{.{ url_for('editar_usuarios') }}">d</a>
+  
   {% with messages = get_flashed_messages() %}
   {% if messages %}
   {% for message in messages %}
