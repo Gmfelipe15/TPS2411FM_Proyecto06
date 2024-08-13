@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, flash #,config
+from flask import Flask, render_template, request, redirect, session, url_for, flash # config
 from flask_mysqldb import MySQL
+from flask_session import Session
 # import mysql.connector
 
 #from app import obtener_usuarios
@@ -15,6 +16,8 @@ mysql = MySQL(app)
 
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
 
 @app.route('/')#Ruta para el home signup
 def index():
@@ -124,6 +127,23 @@ def factura():
 @app.route('/producto') 
 def producto():
     return render_template('08-PRODUCT.html')
+
+
+# Seguridad
+    
+@app.route('/usuarios')
+def usuarios():
+    if 'nombre' in session and 'email' in session:
+        return render_template('usuarios.html')
+    else:
+        return redirect(url_for('login'))
+    
+@app.route('/usuarios')
+def protect():
+    if 'nombre' in session and 'email' in session:
+        return render_template('protect.html')
+    else:
+        return redirect(url_for('login'))
 
 
 if __name__=='__main__':
