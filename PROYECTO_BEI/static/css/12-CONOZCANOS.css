@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     font-family:"Jost", sans-serif;
-    font-weight:600;
+    font-weight:600px;
 }
 .img-fluid {
     background-color: rgb(192, 238, 195);

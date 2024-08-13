@@ -1,15 +1,18 @@
 html {
-  min-height: 100%;
-  position: relative;
+  height: 100%;
 }
 body {
+  flex-direction: column;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-blend-mode: multiply;
   background-position: center;
   background-size: cover;
   font-family:"Jost", sans-serif;
-  font-weight:600;
+  font-weight:600px;
+  position: relative;
+  padding-bottom: 2em;
+  min-height: 100vh;
 }
 @media(max-width: 991px){
   .sidebar{
@@ -35,14 +38,14 @@ nav {
   padding-right: 20px;
 }
 .nav-white {
-  font-weight: 500;
+  font-weight: 500px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
 }
 .nav-white:visited {
-  font-weight: 500;
+  font-weight: 500px;
   color: white;
 }
 .nav-white:hover{
@@ -56,16 +59,16 @@ nav {
 }
 
 /* FOOTER */
-.footer { 
-  padding-bottom: 81px;
-  position:fixed;
-  margin-top: auto;
-  left:0px;
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   width: 100%;
   padding: 10px;
   background-color: rgba(166, 192, 114, 0.671);
   text-align: center;
+  z-index: 1;   
 }
 .footer .copyright {
   font-size: 12px;
