@@ -8,12 +8,12 @@ body {
   background-blend-mode: multiply;
   background-position: center;
   background-size: cover;
-  font-family:"Jost", sans-serif;
-  font-weight:600;
+  font-family: "Jost", sans-serif;
+  font-weight: 600;
   position: relative;
-  padding-bottom: 2em;
-  min-height: 100vh;
+
 }
+
 /* FOOTER */
 .footer {
   position: fixed;
@@ -58,4 +58,8 @@ body {
 .copyright {
   margin: 0;
 }
-
+.footer .copyright {
+  font-size: 12px;
+  font-family: "Jost", sans-serif !important;
+  font-weight: 600 !important;
+}
