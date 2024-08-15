@@ -1,6 +1,14 @@
 body {
-  margin-top: 20px;
-  background: #2a8b2fda;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  font-family:"Jost", sans-serif;
+  font-weight:600;
+  position: relative;
+  background-image:url("../IMAGENES/08-BACKROUND.png");  
+
 }
 
 .card-footer-btn {
