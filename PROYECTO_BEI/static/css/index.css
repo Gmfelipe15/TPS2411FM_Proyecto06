@@ -4,7 +4,11 @@
 body {
     background-image:url("../IMAGENES/07-BACKGROUND.png");
     color: whitesmoke;
-  
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family:"Jost", sans-serif;
+    font-weight:600;
 }
 
 .home {
@@ -21,10 +25,7 @@ body {
     font-family: "Jost", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 30px;
-
-
-    
+    font-size: 30px;  
 }
 h3 {
     color: whitesmoke;
