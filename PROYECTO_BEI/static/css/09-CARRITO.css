@@ -18,6 +18,8 @@ body {
   }
 }
 
+
+
 .producto {
   width: 370px;
   height: auto;
@@ -72,4 +74,5 @@ div {
 .producto-acciones {
   margin-top: 15px;
 }
+
 

@@ -15,8 +15,8 @@ body {
 }
 
 /* FOOTER */
-.footer {
-  position: fixed;
+.footer-fixed {
+  position: relative;
   left: 0;
   right: 0;
   bottom: 0;
@@ -31,15 +31,6 @@ body {
 }
 .footer a {
   color: #09140F;
-}
-
-.footer-fixed {
-  margin-bottom: 0;
-  width: 100%;
-  height: 40px;
-  background-color: rgba(166, 192, 114, 0.671);
-  text-align: center;
-  padding: 10px;
 }
 .footer-fixed .copyright {
   font-size: 12px;
