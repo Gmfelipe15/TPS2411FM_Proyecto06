@@ -8,7 +8,7 @@ from flask_session import Session
 app = Flask(__name__)
 
 #Conexión a mysql
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['user'] = 'localhost'
 app.config['MYSQL_USER'] = 'syntax'
 app.config['MYSQL_PASSWORD'] = 'syntax'
 app.config['MYSQL_DB'] = 'bei'
@@ -136,7 +136,7 @@ def homeadmin():
     if 'nombre' in session and 'email' in session:
         return render_template('homeadmin.html')
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('02-LOGIN.html'))
 
 
 if __name__=='__main__':
