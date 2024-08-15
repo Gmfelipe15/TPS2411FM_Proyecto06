@@ -54,3 +54,8 @@ body {
   font-family: "Jost", sans-serif !important;
   font-weight: 600 !important;
 }
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

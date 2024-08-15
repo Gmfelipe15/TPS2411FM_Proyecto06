@@ -25,11 +25,7 @@ body {
     background: linear-gradient(rgba(255, 255, 255, 0.248), rgba(0, 0, 0, 0));
     height: 80px;
   }
-  .container {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
+
   #navbarNav { 
     justify-content: end;
     padding-right: 20px;

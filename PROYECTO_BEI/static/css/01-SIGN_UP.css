@@ -19,11 +19,7 @@ padding: 20px;
     font-size: larger;
     color: azure;
 }
-.container {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
+
 .mb-3 {
     color: white;
     font-family:"Jost", sans-serif;
