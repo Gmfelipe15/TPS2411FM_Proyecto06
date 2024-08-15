@@ -89,10 +89,9 @@
         </div>
       </div>
     </div>
-
     <form action="/add_message" method="POST" >
 
-      <div class="container">
+      <div class="formulario">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         {% for message in messages %}
@@ -118,7 +117,7 @@
       <div class="mb-3">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
-  
+    </div>
     </form>
   </div>
   </div>
