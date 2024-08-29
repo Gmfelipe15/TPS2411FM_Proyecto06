@@ -20,6 +20,13 @@ html {
       backdrop-filter: blur(10px);
     }
   }
+  .nav-white {
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   #logo {
     align-self: center;
   }

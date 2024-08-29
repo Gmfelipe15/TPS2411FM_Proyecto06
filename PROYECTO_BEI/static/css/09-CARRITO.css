@@ -17,7 +17,6 @@ body {
     backdrop-filter: blur(10px);
   }
 }
-
 .producto {
   width: 370px;
   height: auto;
@@ -26,50 +25,24 @@ body {
   justify-content: center;
 }
 
-.col-md-5{
-  background-color: #09140F;
-}
 
 .producto-info {
   background-color: #8ABD82;
   padding: 20px;
 }
-#input_1, #input_2 {
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 60px;
-}
-#input_1:hover,#input_2:hover {
-  cursor: pointer;
-}
+
 .descripcion-cont {
   text-align: justify;
   width: 70%;
 }
 
-#button_1, #button_2 { /*inputs btns*/
-  border-radius: 7px;
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 210px; 
-  height: 45px;
-  font-size: 17px;
-} 
+
 div {
   color: white;
 }
-.btn_1 {
-  background-color: #54d640;
-  border: solid #09140F;
-}
-.btn_2 {
-  background-color: #09140F;
-  color: #8dcf82;
-  border:solid #70D460;
-}
-.btn_1:hover, .btn_2:hover {
-  box-shadow: 0px 0px 10px #17412D;
-}
+
 .producto-acciones {
   margin-top: 15px;
 }
+
 

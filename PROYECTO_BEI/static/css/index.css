@@ -4,8 +4,17 @@
 body {
     background-image:url("../IMAGENES/07-BACKGROUND.png");
     color: whitesmoke;
-  
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    position: relative;
 }
+
 .home {
     color: whitesmoke;
     text-indent: 20px;
@@ -20,13 +29,7 @@ body {
     font-family: "Jost", sans-serif;
     font-weight: 500;
     font-style: italic;
-    font-size: 30px;
-
-
-    
-}
-h3 {
-    color: whitesmoke;
+    font-size: 30px;  
 }
 h4 {
     padding: 2%;

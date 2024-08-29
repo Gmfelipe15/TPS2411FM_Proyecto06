@@ -7,9 +7,10 @@ body {
     font-family:"Jost", sans-serif;
     font-weight:600;
 }
+
 .one{
 margin: 10%;
-padding: 20px;
+padding: 10px;
 }
 
 .btn-close {
@@ -17,15 +18,6 @@ padding: 20px;
     font-weight:600;
     font-size: larger;
     color: azure;
-}
-.xxx {
-    width: 100%;
-    border-radius: 10px;
-    background-color: #17412d8a;
-    color: white;
-    /* top: 50%; Move the element 50% from the top of the page */
-    left: 50%;
-
 }
 
 .mb-3 {
