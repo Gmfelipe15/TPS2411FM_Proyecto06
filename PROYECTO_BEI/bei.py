@@ -98,14 +98,6 @@ def eliminar(id):
    flash('Contacto removido satisfactoriamente')
    return redirect(url_for('mostrar_usuarios'))
 
-@app.route('/eliminar_mensaje/<string:id>')
-def eliminar_mensaje(id):
-   cur = mysql.connection.cursor()
-   cur.execute('DELETE FROM contactus WHERE id = {0}'.format(id))
-   mysql.connection.commit()
-   flash('¡Mensaje removido!')
-   return redirect(url_for('mensajes'))
-
 #Conexión al formulario de contacto
 
 @app.route('/conozcanos') #Ruta para el formulario de contacto
