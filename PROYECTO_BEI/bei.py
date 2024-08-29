@@ -163,6 +163,10 @@ def registro_a():
 def subir_producto():
     return render_template('subir_producto.html')
 
+@app.route('/cambio_contraseña')
+def cambio_contraseña():
+    return render_template('05-CAMBIO_DE_CONTRASEÑA.html')
+
 
 # Seguridad
 
