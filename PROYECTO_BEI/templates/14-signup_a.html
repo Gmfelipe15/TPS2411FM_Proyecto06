@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro de Administrador{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/01-SIGN_UP.css') }}">     
+<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">  
+<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <h2>Registro de Administrador</h2>
+    <form method="POST" action="{{ url_for('signup_a') }}">
+        <div class="form-group mb-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="password">Contraseña:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="rol">Rol:</label>
+            <select class="form-control" id="rol" name="rol" required>
+                <option value="1">Administrador</option>
+                <option value="2">Cliente</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+{% endblock %}
