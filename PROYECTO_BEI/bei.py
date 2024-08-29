@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request, redirect, session,  url_for, flash # config
 from flask_mysqldb import MySQL
 from flask_session import Session
-# import mysql.connector
-
-#from app import obtener_usuarios
+from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.utils import secure_filename
+import os
 
 app = Flask(__name__)
 
@@ -48,8 +48,23 @@ def add():
       cur.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
       mysql.connection.commit()
       flash('Cuenta creada satisfactoriamente')
-      return redirect(url_for('signup')) #Redirecciona al signup de nuevo después de hacer el submit
+      return redirect(url_for('login')) #Redirecciona al signup de nuevo después de hacer el submit
     #Para empezar a guardar datos
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT * FROM signup WHERE email=%s AND password=%s', (email, password))
+        user = cur.fetchone()
+        if user:
+            session['user'] = user[0]
+            return redirect(url_for('index'))
+        else:
+            flash('⚠️ Nombre o contraseña incorrectos')
+    return render_template('02-LOGIN.html')
       
 
 
@@ -112,10 +127,6 @@ def mostrar_mensajes():
 def carrito():
     return render_template('09-CARRITO.html')
 
-@app.route('/login') 
-def login():
-    return render_template('02-LOGIN.html')
-
 @app.route('/pago') 
 def pago():
     return render_template('13-PAGO.html')
@@ -128,8 +139,17 @@ def factura():
 def producto():
     return render_template('08-PRODUCT.html')
 
+@app.route('/subir_producto') 
+def subir_producto():
+    return render_template('subir_producto.html')
+
 
 # Seguridad
+
+@app.route('/logout')
+def logout():
+    session.pop('user', None)
+    return redirect(url_for('index'))
     
 @app.route('/homeadmin')
 def homeadmin():
