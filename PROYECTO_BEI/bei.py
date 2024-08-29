@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import os
-
+ 
 app = Flask(__name__)
 
 #Conexión a mysql
