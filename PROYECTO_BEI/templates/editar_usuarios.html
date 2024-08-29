@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+{% extends "navbar.html" %}
+{% block tittle %}edit_user{% endblock %}
+{% block content %}
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -11,9 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../static/css/edit.css">
-</head>
-<body>
-    
+
     <BR></BR>
     <div class="container">
         <div class="form-container">
@@ -50,5 +45,6 @@
             </form>
         </div>
     </div>
+{% endblock %}  
 </body>
 </html>
