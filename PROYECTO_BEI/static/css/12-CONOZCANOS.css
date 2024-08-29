@@ -1,5 +1,5 @@
 body {
-    background-color: #17412D;
+    background: #2a8b2fda url(../IMAGENES/07-BACKGROUND.png) no-repeat center center fixed;
     flex-direction: column;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -27,14 +27,18 @@ body {
   max-width: 800px;
   margin: 20px auto;
   grid-row: 2;
-  margin-bottom: 10px; /* Place the form in the middle row */
-}
+  margin-bottom: 10px; }
 .btn-primary {
   background-color: #8ABD82; 
   border-color: #8ABD82;
+  width: 100px;
+}
+.btn-primary:hover{
+  background-color: rgb(27, 83, 34);
+
 }
 .form-control {
-  width: 100%; /* Make the inputs take up the full width of the container */
+  width: 100%; 
 }
 .conozcanos{
     background-color: #0000003f; 
