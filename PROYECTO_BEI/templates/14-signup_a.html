@@ -24,7 +24,7 @@
    
 </head>
     <h2>Registro de Usuario</h2>
-    <form method="POST" action="{{ url_for('REGISTRO_A') }}">
+    <form method="POST" action="{{ url_for('signup_a') }}">
         <div class="mb-3">
             <label for="nombre">Nombre:</label>
             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -40,7 +40,7 @@
         </div>
         <div class="mb-3">
             <label for="tipo">Rol:</label>
-            <select class="form-control" id="rol" name="rol" required>
+            <select class="form-control" id="rol" name="tipo" required>
                 <option value="1">Administrador</option>
                 <option value="0">Cliente</option>
             </select>
