@@ -40,10 +40,11 @@
                     <input name="telefono" type="telefono" class="form-control" id="telefono" required value="{{ usuarios.5 }}">
                 </div>
                 <div class="mb-3">
-                    <label for="tipo">ADMIN</label>
-                    <input type="radio" name="tipo" value="ADMIN">
-                    <label for="tipo">CLIENTE</label>
-                    <input type="radio" name="tipo" value="CLIENTE">
+                    <label for="">Rol:</label>
+                    <select name="tipo" class="form-control"required>
+                        <option value="1">ADMIN</option>
+                        <option value="0">CLIENTE</option>
+                      </select>
                 </div>
                 <button type="submit" class="btn btn-block">Editar</button>
             </form>
