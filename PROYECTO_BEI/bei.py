@@ -139,24 +139,26 @@ def factura():
 def producto():
     return render_template('08-PRODUCT.html')
 @app.route('/signup_a', methods=['GET', 'POST'])
-def registro_a():
+def signup_a():
     if request.method == 'POST':
         nombre = request.form['nombre']
         email = request.form['email']
         password = request.form['password']
-        rol = request.form['rol']  # Don't forget to get the 'rol' value from the form
+        rol = request.form['rol']
         try:
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO usuarios (nombre, password, rol) VALUES (%s, %s, %s)", (nombre, password, rol))
+            cur.execute("INSERT INTO usuarios (nombre, email, password, rol) VALUES (%s, %s, %s, %s)", (nombre, email, password, rol))
             mysql.connection.commit()
             cur.close()
             flash('¡Administrador registrado exitosamente!', 'success')
         except Exception as e:
             flash(f"Error al registrar el administrador: {e}", 'error')
-        
+
+        print(url_for('signup_a'))  # Imprime para verificar que el endpoint se está construyendo correctamente
         return redirect(url_for('signup_a'))
-    
+
     return render_template('14-signup_a.html')
+
 
 
 @app.route('/subir_producto') 
