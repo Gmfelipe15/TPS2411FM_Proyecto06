@@ -4,7 +4,7 @@ from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import os
-
+ 
 app = Flask(__name__)
 
 #Conexión a mysql
@@ -98,14 +98,6 @@ def eliminar(id):
    flash('Contacto removido satisfactoriamente')
    return redirect(url_for('mostrar_usuarios'))
 
-@app.route('/eliminar_mensaje/<string:id>')
-def eliminar_mensaje(id):
-   cur = mysql.connection.cursor()
-   cur.execute('DELETE FROM contactus WHERE id = {0}'.format(id))
-   mysql.connection.commit()
-   flash('¡Mensaje removido!')
-   return redirect(url_for('mensajes'))
-
 #Conexión al formulario de contacto
 
 @app.route('/conozcanos') #Ruta para el formulario de contacto
@@ -172,6 +164,10 @@ def signup_a():
 @app.route('/subir_producto') 
 def subir_producto():
     return render_template('subir_producto.html')
+
+@app.route('/cambio_contraseña')
+def cambio_contraseña():
+    return render_template('05-CAMBIO_DE_CONTRASEÑA.html')
 
 
 # Seguridad
