@@ -127,6 +127,30 @@ def factura():
 @app.route('/producto') 
 def producto():
     return render_template('08-PRODUCT.html')
+@app.route('/registro_a', methods=['GET', 'POST'])
+def registro_a():
+    # Verificar si el usuario es administrador antes de permitir el acceso
+    if 'rol' not in session or session['rol'] != '1':  # Solo administradores (rol=1)
+        flash('Acceso denegado: Necesitas ser Administrador para acceder a esta página.', 'error')
+        return redirect(url_for('login'))
+
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        password = request.form['password']
+        rol = '1'  # Establecer el rol como '1' para administradores
+
+        try:
+            cur = mysql.connection.cursor()
+            cur.execute("INSERT INTO usuarios (nombre, password, rol) VALUES (%s, %s, %s)", (nombre, password, rol))
+            mysql.connection.commit()
+            cur.close()
+            flash('¡Administrador registrado exitosamente!', 'success')
+        except Exception as e:
+            flash(f"Error al registrar el administrador: {e}", 'error')
+        
+        return redirect(url_for('REGISTRO_A'))
+    
+    return render_template('REGISTRO_A.HTML')
 
 
 # Seguridad
