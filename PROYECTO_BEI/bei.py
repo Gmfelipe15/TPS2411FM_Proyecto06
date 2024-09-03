@@ -23,8 +23,26 @@ Session(app)
 def index():
    return render_template('index.html')
 
-@app.route('/signup') 
+@app.route('/signup', methods= ['GET','POST'])
 def signup():
+    if request.method == 'POST':
+        name = request.form ['name']
+        email = request.form ['email']
+        password = request.form ['password']
+        direccion = request.form ['direccion']
+        telefono = request.form ['telefono']
+        
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT email FROM signup WHERE email = %s', (email,))
+        
+        if cursor.fetchone():
+            flash('⚠️ Este email ya está registrado')
+            return redirect(url_for('signup'))
+        cursor.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
+
+        mysql.connection.commit()
+        flash('✅ Cuenta creada satisfactoriamente')
+        return redirect(url_for('login'))
     return render_template('01-SIGN_UP.html')
 
 @app.route('/usuarios') #Mostrar los datos de usuarios en la tabla 
@@ -140,24 +158,17 @@ def producto():
     return render_template('08-PRODUCT.html')
 @app.route('/signup_a', methods=['GET', 'POST'])
 def signup_a():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        email = request.form['email']
-        password = request.form['password']
-        rol = request.form['rol']
-        try:
-            cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO usuarios (nombre, email, password, rol) VALUES (%s, %s, %s, %s)", (nombre, email, password, rol))
-            mysql.connection.commit()
-            cur.close()
-            flash('¡Administrador registrado exitosamente!', 'success')
-        except Exception as e:
-            flash(f"Error al registrar el administrador: {e}", 'error')
-
+ if request.method == 'POST':
+        name = request.form ['name']
+        email = request.form ['email']
+        password = request.form ['password']
+        tipo = request.form ['tipo']
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO signup (name, email, password, tipo) VALUES (%s, %s, %s, %s)', (name, email, password, tipo))
+        mysql.connection.commit()
         print(url_for('signup_a'))  # Imprime para verificar que el endpoint se está construyendo correctamente
         return redirect(url_for('signup_a'))
-
-    return render_template('14-signup_a.html')
+ return render_template('14-signup_a.html')
 
 
 
