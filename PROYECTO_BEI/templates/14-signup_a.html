@@ -1,72 +1,83 @@
-{% extends 'base.html' %}
-{% block title %}Registro de Administrador{% endblock %}
+{% extends "navbar.html" %}
+{% block tittle %}ADMIN - Registro{% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/14-signup_a.css') }}">     
-<link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">  
+<link rel="stylesheet" href="{{ url_for('static', filename='css/01-SIGN_UP.css') }}">     
+
+    <!-- <link rel="stylesheet" href="../static/css/01-SIGN_UP.css">
+    <link rel="stylesheet" href="../static/css/nav1_footer.css">  -->
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-<title>BEI - Registrarse</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='FAVI/favicon-32x32.png') }}">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<body class="vh-100 overflow-hidden">
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-            <img src="{{ url_for('static', filename='IMAGENES/bei.logo-removebg-preview.png') }}" alt="logo" width="50" height="50">
-        </a>
-        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="sidebar offcanvas-header text-white border-bottom">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BEI</h5>
-                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6" id="logo">
+                <img src="{{ url_for('static', filename='IMAGENES/01.png') }}" alt="logo" class="img-fluid">
             </div>
-            <div class="sidebar offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                    <li class="nav-item">
-                        <a id="tienda" class="nav nav-white" href="/">TIENDA</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="conozcanos" class="nav nav-white" href="/conozcanos">CONOZCANOS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a id="carrito" class="nav nav-white" href="/carrito">CARRITO</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav nav-white" id="perfil" href="/login">LOGIN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav nav-white" id="perfil" href="{{ url_for('signup') }}">SIGNUP</a>
-                    </li>
-                </ul>
+
+            <div class="col-md-6" id="formulario">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>{{ message }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                
+                <h2>Registro para admins</h2><br>
+
+                <form id="signup-form" action="/signup_a" method="POST">
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">NOMBRE</label>
+                        <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">EMAIL</label>
+                        <input type="email" class="form-control" name="email" placeholder="Ingrese su correo electrónico" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="password" class="form-label">CONTRASEÑA</label>
+                        <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="tipo" class="form-label">ROL</label>
+                        <select class="form-control" id="tipo" name="tipo" required>
+                            <option value="1">Administrador</option>
+                            <option value="2">Cliente</option>
+                        </select>
+                    </div>
+                    
+                    <div class="b_primario">
+                        <button type="submit" class="btn_1">Registrarse</button>
+                    </div>
+                </form>
+
+                <span class="link-1">¿Ya tiene cuenta?</span>
+                <div class="b_secundario">
+                    <a href="{{ url_for('login') }}"><button class="btn_2">Iniciar sesión</button></a>
+                </div>
             </div>
+            <br><br><br>
         </div>
     </div>
-</nav>
-<form method="POST" action="{{ url_for('signup_a') }}">
-        <div class="form-group mb-3">
-            <label for="name">Nombre:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="form-group mb-3">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        <div class="form-group mb-3">
-            <label for="password">Contraseña:</label>
-            <input type="password" class="form-control" id="password" name="password" required>
-        </div>
-        <div class="form-group mb-3">
-            <label for="tipo">Rol:</label>
-            <select class="form-control" id="tipo" name="tipo" required>
-                <option value="1">Administrador</option>
-                <option value="2">Cliente</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
-    </form>
-</body>
+
+
+</div>
 {% endblock %}
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
+
+
