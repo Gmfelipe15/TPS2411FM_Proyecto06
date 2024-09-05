@@ -12,17 +12,18 @@ import os
 app = Flask(__name__)
 
 #Conexión a mysql
-"""app.config['user'] = 'localhost'
+app.config['user'] = 'localhost'
 app.config['MYSQL_USER'] = 'syntax'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
-mysql = MySQL(app)"""
+mysql = MySQL(app)
+
 #Conexion editada para subir a RENDER
-app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST','localhost')
+"""app.config['MYSQL_HOST'] = os.getenv('MYSQL_HOST','localhost')
 app.config['MYSQL_USER'] = os.getenv('MYSQL_USER','syntax')
 app.config['MYSQL_PASSWORD'] = os.getenv('MYSQL_PASSWORD','syntaxis')
 app.config['MYSQL_DB'] =os.getenv('MYSQL_DB','bei')
-mysql = MySQL(app)
+mysql = MySQL(app)"""
 
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
