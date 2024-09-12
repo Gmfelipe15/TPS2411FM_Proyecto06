@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, redirect, session,  url_for, flash # config
+from flask import Flask, render_template, request, redirect, session,  url_for, flash
 from flask_mysqldb import MySQL
 from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+
 import os
  
 app = Flask(__name__)
@@ -10,9 +11,10 @@ app = Flask(__name__)
 #Conexión a mysql
 app.config['user'] = 'localhost'
 app.config['MYSQL_USER'] = 'syntax'
-app.config['MYSQL_PASSWORD'] = 'syntax'
+app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
+
 
 # configuraciones para la conexión
 app.secret_key = 'mysecretkey'
@@ -23,8 +25,26 @@ Session(app)
 def index():
    return render_template('index.html')
 
-@app.route('/signup') 
+@app.route('/signup', methods= ['GET','POST'])
 def signup():
+    if request.method == 'POST':
+        name = request.form ['name']
+        email = request.form ['email']
+        password = request.form ['password']
+        direccion = request.form ['direccion']
+        telefono = request.form ['telefono']
+        
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT email FROM signup WHERE email = %s', (email,))
+        
+        if cursor.fetchone():
+            flash('⚠️ Este email ya está registrado')
+            return redirect(url_for('signup'))
+        cursor.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
+
+        mysql.connection.commit()
+        flash('✅ Cuenta creada satisfactoriamente')
+        return redirect(url_for('login'))
     return render_template('01-SIGN_UP.html')
 
 @app.route('/usuarios') #Mostrar los datos de usuarios en la tabla 
@@ -35,21 +55,6 @@ def mostrar_usuarios():
     print('datos')
     return render_template('usuarios.html', signup = datos)
 
-      
-@app.route('/add_usuario', methods= ['POST']) #Añadir usuarios en el formulario
-def add():
-   if request.method == 'POST':
-      name = request.form ['name']
-      email = request.form ['email']
-      password = request.form ['password']
-      direccion = request.form ['direccion']
-      telefono = request.form ['telefono']
-      cur = mysql.connection.cursor()
-      cur.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
-      mysql.connection.commit()
-      flash('Cuenta creada satisfactoriamente')
-      return redirect(url_for('login')) #Redirecciona al signup de nuevo después de hacer el submit
-    #Para empezar a guardar datos
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -125,38 +130,47 @@ def mostrar_mensajes():
 
 @app.route('/carrito') 
 def carrito():
-    return render_template('09-CARRITO.html')
+    if 'user' in session:
+        return render_template('09-CARRITO.html')
+    else:
+        flash('⚠️ Debe logearse para ver su carrito')
+        return redirect(url_for('login'))
 
 @app.route('/pago') 
 def pago():
-    return render_template('13-PAGO.html')
+    if 'user' in session:
+        return render_template('13-PAGO.html')
+    else:
+        flash('⚠️ Debe logearse para realizar una compra')
+        return redirect(url_for('login'))
+    
 
 @app.route('/factura') 
 def factura():
-    return render_template('11-FACTURA.html')
+    if 'user' in session:
+        return render_template('11-FACTURA.html')
+    else:
+        flash('⚠️ Debe logearse para realizar una compra')
+        return redirect(url_for('login'))
 
 @app.route('/producto') 
 def producto():
     return render_template('08-PRODUCT.html')
+
 @app.route('/signup_a', methods=['GET', 'POST'])
-def registro_a():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        email = request.form['email']
-        password = request.form['password']
-        rol = request.form['rol']  # Don't forget to get the 'rol' value from the form
-        try:
-            cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO usuarios (nombre, password, rol) VALUES (%s, %s, %s)", (nombre, password, rol))
-            mysql.connection.commit()
-            cur.close()
-            flash('¡Administrador registrado exitosamente!', 'success')
-        except Exception as e:
-            flash(f"Error al registrar el administrador: {e}", 'error')
-        
+def signup_a():
+ if request.method == 'POST':
+        name = request.form ['name']
+        email = request.form ['email']
+        password = request.form ['password']
+        tipo = request.form ['tipo']
+        cursor = mysql.connection.cursor()
+        cursor.execute('INSERT INTO signup (name, email, password, tipo) VALUES (%s, %s, %s, %s)', (name, email, password, tipo))
+        mysql.connection.commit()
+        flash('¡Usuario creado!')
         return redirect(url_for('signup_a'))
-    
-    return render_template('14-signup_a.html')
+ return render_template('14-signup_a.html')
+
 
 
 @app.route('/subir_producto') 
@@ -177,10 +191,7 @@ def logout():
     
 @app.route('/homeadmin')
 def homeadmin():
-    if 'nombre' in session and 'email' in session:
-        return render_template('homeadmin.html')
-    else:
-        return redirect(url_for('02-LOGIN.html'))
+    return render_template('homeadmin.html')
 
 
 if __name__=='__main__':

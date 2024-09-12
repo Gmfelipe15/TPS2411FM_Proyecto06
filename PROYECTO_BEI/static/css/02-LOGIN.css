@@ -134,3 +134,10 @@ body {
     color: #8dcf82;
 
   }
+  .link-1{
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+    
+}

@@ -1,70 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../static/css/05-CAMBIO_DE_CONTRASEÑA.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">  
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
-    <title>BEI - Cambiar contraseña</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='FAVI/favicon-32x32.png') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="FAVI/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#ffffff">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="boostrap_online.css">
-</head>
-<body class=vh-100 overflow-hidden>
-   
-  
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-   
-  
-     <div class="container-fluid">
-  
-       <a class="navbar-brand" href="/" >
-         <img src="../static/IMAGENES/bei.logo-removebg-preview.png" alt="logo" width="50" height="50">
-       </a>
-  
-       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-       </button>
-      
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="sidebar offcanvas-header text-white border-bottom">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">BEI</h5>
-          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-       
-  
-         <div class="sidebar offcanvas-body">
-           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a id="tienda" class="nav nav-white" href="/">TIENDA</a>
-            </li>
-            <li class="nav-item">
-              <a id="conozcanos" class="nav nav-white" href="/conozcanos">CONOZCANOS</a>
-            </li>
-            <li class="nav-item">
-              <a id="carrito" class="nav nav-white" href="/carrito">CARRITO</a>
-            </li>
- 
-            <li class="nav-item">
-              <a class="nav nav-white" id="perfil" href="/login">LOGIN</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav nav-white" id="perfil" href="/signup">SIGNUP</a>
-            </li>
-           </ul>
-         </div>
-       </div>
-     </div>
-   </nav>
-  
+{% extends "navbar.html" %}
+{% block tittle %}cambio{% endblock %}
+{% block content %}
+<title>Cambio de contraseña</title>
+<link rel="stylesheet" href="../static/css/05-CAMBIO_DE_CONTRASEÑA.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='FAVI/favicon-32x32.png') }}">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#ffffff">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="boostrap_online.css">
 
     <main>
         <div class="container-fluid">
@@ -95,11 +42,7 @@
             </div>
         </div>
     </main>
-
-    <footer class="footer-fixed">
-        <p class="copyright">© 2024 BEI by <a href="#">SYNTAX</a> - Contáctenos: Tel. 318123123 - Mail. asdasdasd</p>
-    </footer>
-
+{% endblock %}  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
