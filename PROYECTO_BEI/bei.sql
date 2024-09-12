@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-09-2024 a las 16:36:50
+-- Tiempo de generación: 12-09-2024 a las 16:51:26
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,8 @@ CREATE TABLE `contactus` (
   `message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
+-- --------------------------------------------------------
+
 --
 -- Estructura de tabla para la tabla `productos`
 --
@@ -63,6 +65,11 @@ CREATE TABLE `signup` (
   `telefono` varchar(50) NOT NULL,
   `tipo` tinyint(10) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
 --
 -- Indices de la tabla `contactus`
 --
