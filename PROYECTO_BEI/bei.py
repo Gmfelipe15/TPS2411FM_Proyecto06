@@ -3,17 +3,23 @@ from flask_mysqldb import MySQL
 from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
+import json
 
 import os
  
 app = Flask(__name__)
 
 #Conexión a mysql
+
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'beiweb'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
+     
+
+
+
 
 
 # configuraciones para la conexión
@@ -130,11 +136,44 @@ def mostrar_mensajes():
 
 @app.route('/carrito') 
 def carrito():
-    if 'user' in session:
+    # if 'user' in session:
         return render_template('09-CARRITO.html')
-    else:
-        flash('⚠️ Debe logearse para ver su carrito')
+    # else:
+    #     flash('⚠️ Debe logearse para ver su carrito')
         return redirect(url_for('login'))
+
+@app.route('/añadir_al_carrito/<int:producto_id')
+def añadir_al_carrito(producto_id):
+    connection = MySQL()
+    if connection:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM productos WHERE id = %s", (producto_id))
+        producto = cursor.fetchone()
+        cursor.close()
+        connection.close()
+
+        if producto:
+            carrito = session.get('carrito', {})
+            if str(producto_id) in carrito:
+                if carrito[str(producto_id)]['cantidad'] < producto['cantidad']:
+                    carrito[str(producto_id)]['cantidad'] += 1
+                    flash(f"añadiste {producto['nombre']}' en el carrito", 'success')
+                else:
+                    flash(f"no tenemos suficiente cantidad de{['nombre']}", 'warning')
+            else:
+                carrito[str(producto_id)] = {
+                    'nombre': producto['nombre'],
+                    'precio': float(producto['precio']),
+                    'cantidad': 1
+                }
+                flash(f"Añadiste {producto['nombre']} al carrito", 'success')
+            session['carrito'] = carrito
+        else:
+            flash(f"No encontramos el producto", 'danger')
+    else:
+        flash(f"No conectamos con la basedata", 'danger')
+    return redirect(url_for('index'))
+
 
 @app.route('/pago') 
 def pago():
