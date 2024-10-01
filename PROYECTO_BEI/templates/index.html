@@ -12,6 +12,17 @@
   <link rel="icon" type="image/png" sizes="32*32" href="FAVI/favicon-32x32.png">
     <br>
     <br>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    
     <section class="row">
       <div class="col-sm-1"></div>
       <div class="col-lg-6">
