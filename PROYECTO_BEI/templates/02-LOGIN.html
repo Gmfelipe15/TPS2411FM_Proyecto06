@@ -27,19 +27,19 @@
         {% endif %}
         {% endwith %}
 
-        <form id="login-form">
+        <form id="login-form" action="/login" method="POST">
           <div class="mb-3">
             <label for="email" class="form-label">EMAIL</label>
-            <input type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
+            <input name="email"  type="email" class="form-control" id="email" placeholder="Ingrese su correo electrónico">
           </div>
 
           <div class="mb-3">
             <label for="password" class="form-label">CONTRASEÑA</label>
-            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+            <input name="password" type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
           </div>
 
           <div class="b_primario">
-          <button class="btn_1">Iniciar sesión</button>
+          <button type="submit" class="btn_1">Iniciar sesión</button>
           </div>
         </form>
 

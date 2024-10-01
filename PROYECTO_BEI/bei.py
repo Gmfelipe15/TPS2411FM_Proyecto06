@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 #Conexión a mysql
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'beiweb'
+app.config['MYSQL_USER'] = 'syntax'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
@@ -66,10 +66,11 @@ def login():
         user = cur.fetchone()
         if user:
             session['user'] = user[0]
-            return redirect(url_for('index'))
+            return redirect(url_for('index'))  # Redirecciona a 'index'
         else:
             flash('⚠️ Nombre o contraseña incorrectos')
     return render_template('02-LOGIN.html')
+
       
 
 
@@ -189,7 +190,6 @@ def subir_producto():
             if not allowed_file(imagen.filename):
                 flash('Solo están permitidos archivos JPG y PNG')
                 return redirect(url_for('subir_producto'))
-            
         cur = mysql.connection.cursor()
         cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen) VALUES (%s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen))
         mysql.connection.commit()
