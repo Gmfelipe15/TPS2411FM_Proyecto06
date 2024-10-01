@@ -118,7 +118,7 @@ def add_message():
       cur = mysql.connection.cursor()
       cur.execute('INSERT INTO contactus (name, email, message) VALUES (%s, %s, %s)', (name, email, message))
       mysql.connection.commit()
-      flash('Mensaje enviado satisfactoriamente')
+      flash('✅ Mensaje enviado satisfactoriamente')
       return redirect(url_for('conozcanos'))
    
 @app.route('/mensajes') #Mostrar los datos de usuarios en la tabla 
@@ -171,16 +171,31 @@ def signup_a():
         return redirect(url_for('signup_a'))
  return render_template('14-signup_a.html')
 
-
-
-@app.route('/subir_producto') 
-def subir_producto():
-    return render_template('subir_producto.html')
-
 @app.route('/cambio_contraseña')
 def cambio_contraseña():
     return render_template('05-CAMBIO_DE_CONTRASEÑA.html')
 
+#Subir productos
+
+@app.route('/subir_producto', methods= ['GET','POST'])
+def subir_producto():
+    if request.method == 'POST':
+        nombre = request.form ['nombre']
+        descripcion = request.form ['descripcion']
+        precio = request.form ['precio']
+        cantidad = request.form ['cantidad']
+        imagen = request.files.get ['imagen']
+        if imagen and imagen.filename:
+            if not allowed_file(imagen.filename):
+                flash('Solo están permitidos archivos JPG y PNG')
+                return redirect(url_for('subir_producto'))
+            
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen) VALUES (%s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen))
+        mysql.connection.commit()
+        flash('✅ ¡Producto subido!')
+        return redirect(url_for('inventario'))
+    return render_template('subir_producto.html')
 
 # Seguridad
 
