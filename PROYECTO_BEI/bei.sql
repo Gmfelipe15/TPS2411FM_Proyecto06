@@ -27,12 +27,11 @@ CREATE TABLE `signup` (
   `password` varchar(255) NOT NULL,
   `direccion` varchar(80) NOT NULL,
   `telefono` int(15) NOT NULL,
-  `tipo` tinyint(10) NOT NULL DEFAULT 1
+  `tipo` tinyint(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 ALTER TABLE `contactus`
   ADD PRIMARY KEY (`id`);
-
 
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`);
