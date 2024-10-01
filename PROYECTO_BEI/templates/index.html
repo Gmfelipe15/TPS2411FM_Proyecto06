@@ -67,6 +67,8 @@
             <h5 class="card-title">BEI - Blanca</h5>
             <p class="card-text">$20.000 COP</p>
             <a href="/producto" class="btn btn-success">Ver más</a>
+            <a href="{{ url_for('añadir_al_carrito', producto_id=id) }}" class="btn btn-success">añadir al carrito</a>
+
           </div>
         </div>
 
@@ -76,6 +78,7 @@
             <h5 class="card-title">BEI - Blanca</h5>
             <p class="card-text">$20.000 COP</p>
             <a href="/producto" class="btn btn-success">Ver más</a>
+            <a href="{{ url_for('añadir_al_carrito', producto_id=producto_id) }}" class="btn btn-success">añadir al carrito</a>
           </div>
         </div>
 
