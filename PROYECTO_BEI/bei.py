@@ -21,6 +21,9 @@ app.secret_key = 'mysecretkey'
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
+app.config['UPLOAD_FOLDER']='static/uploads'
+app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #(2mB x 1024px 1024px)
+
 @app.route('/')#Ruta para el home signup
 def index():
    return render_template('index.html')
@@ -189,7 +192,10 @@ def subir_producto():
             if not allowed_file(imagen.filename):
                 flash('Solo están permitidos archivos JPG y PNG')
                 return redirect(url_for('subir_producto'))
-            
+            imagen_filename = secure_filename(imagen.filename)
+            imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], imagen_filename))
+        else:
+            imagen_filename = None
         cur = mysql.connection.cursor()
         cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen) VALUES (%s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen))
         mysql.connection.commit()
