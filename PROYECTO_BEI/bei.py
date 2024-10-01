@@ -12,7 +12,7 @@ app = Flask(__name__)
 #Conexión a mysql
 
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'beiweb'
+app.config['MYSQL_USER'] = 'syntax'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
@@ -26,6 +26,9 @@ mysql = MySQL(app)
 app.secret_key = 'mysecretkey'
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
+
+app.config['UPLOAD_FOLDER']='static/uploads'
+app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #(2mB x 1024px 1024px)
 
 @app.route('/')#Ruta para el home signup
 def index():
@@ -72,10 +75,11 @@ def login():
         user = cur.fetchone()
         if user:
             session['user'] = user[0]
-            return redirect(url_for('index'))
+            return redirect(url_for('index'))  # Redirecciona a 'index'
         else:
             flash('⚠️ Nombre o contraseña incorrectos')
     return render_template('02-LOGIN.html')
+
       
 
 
