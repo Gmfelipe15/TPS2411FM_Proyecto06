@@ -9,8 +9,8 @@ import os
 app = Flask(__name__)
 
 #Conexión a mysql
-app.config['user'] = 'localhost'
-app.config['MYSQL_USER'] = 'syntax'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'beiweb'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
