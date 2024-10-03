@@ -214,7 +214,7 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/subir_producto', methods= ['GET','POST'])
+"""@app.route('/subir_producto', methods= ['GET','POST'])
 def subir_producto():
     if request.method == 'POST':
         nombre = request.form ['nombre']
@@ -224,7 +224,7 @@ def subir_producto():
         imagen = request.files.get ['imagen']
         if imagen and imagen.filename:
             if not allowed_file(imagen.filename):
-                flash('Solo están permitidos archivos JPG y PNG')
+                flash('Solo están permitidos archivos JPG, JPEG y PNG')
                 return redirect(url_for('subir_producto'))
             imagen_filename = secure_filename(imagen.filename)
             imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], imagen_filename))
@@ -235,7 +235,33 @@ def subir_producto():
         mysql.connection.commit()
         flash('✅ ¡Producto subido!')
         return redirect(url_for('inventario'))
+    return render_template('subir_producto.html')"""
+
+@app.route('/subir_producto', methods= ['GET','POST'])
+def subir_producto():
+    if request.method == 'POST':
+        nombre = request.form ['nombre']
+        descripcion = request.form ['descripcion']
+        precio = request.form ['precio']
+        cantidad = request.form ['cantidad']
+        imagen = request.files.get ['imagen']
+        if 'imagen' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['imagen']
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            return redirect(url_for('inventario', name=filename))
     return render_template('subir_producto.html')
+
+@app.route('/inventario')
+def inventario():
+    return render_template('10-INVENTARIO.html')
 
 # Seguridad
 

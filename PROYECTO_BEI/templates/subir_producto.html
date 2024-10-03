@@ -15,9 +15,18 @@
     <br>
     <br>
     <div class="container text-center">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>{{ message }}</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
         <h1>Subir producto a la tienda</h1>
         <br>
-        <form action="/producto">
+        <form action="/subir_producto">
             <div class="mb-3">
                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto">
             </div>
@@ -37,11 +46,11 @@
             <div class="mb-3">
                 <label for=""><strong>Estado</strong></label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="disponibilidad" id="disponible" value="disponible" checked>
+                    <input class="form-check-input" type="radio" name="disponibilidad" id="disponible" value="Disponible" checked>
                     <label class="form-check-label" for="disponible">Disponible</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="disponibilidad" id="noDisponible" value="noDisponible">
+                    <input class="form-check-input" type="radio" name="disponibilidad" id="noDisponible" value="No Disponible">
                     <label class="form-check-label" for="noDisponible">No disponible</label>
                 </div>
             </div>
