@@ -5,12 +5,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import json
 import os
-UPLOAD_FOLDER = 'static/uploads'
+"""UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-
+"""
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
+"""app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)"""
 
 #Conexión a mysql
 app.config['MYSQL_HOST'] = 'localhost'
@@ -209,10 +209,10 @@ def verificacion_exitosa():
 
 
 
-#Subir productos
+"""#Subir productos
 def allowed_file(filename):
     return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS"""
 
 """@app.route('/subir_producto', methods= ['GET','POST'])
 def subir_producto():
@@ -245,18 +245,11 @@ def subir_producto():
         precio = request.form ['precio']
         cantidad = request.form ['cantidad']
         imagen = request.files.get ['imagen']
-        if 'imagen' not in request.files:
-            flash('No file part')
-            return redirect(request.url)
-        file = request.files['imagen']
-        if file.filename == '':
-            flash('No selected file')
-            return redirect(request.url)
-        
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('inventario', name=filename))
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen) VALUES (%s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen))
+        mysql.connection.commit()
+        flash(f'✅ El producto {nombre} ¡ha sido añadido a la tienda!')
+        return redirect(url_for('conozcanos'))
     return render_template('subir_producto.html')
 
 @app.route('/inventario')
