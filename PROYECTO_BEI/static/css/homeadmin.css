@@ -1,0 +1,58 @@
+.text-light {
+    background-color:none
+}
+body {
+    background-image:url("../IMAGENES/07-BACKGROUND.png");
+    color: whitesmoke;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.home {
+    color: whitesmoke;
+    text-indent: 20px;
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+
+}
+.texthome {
+    text-indent: 30px;
+    color: #8ABD82;
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 30px;  
+}
+h4 {
+    padding: 2%;
+}
+.col-sm-5{
+    background-color: #8ABD82;
+    max-width:fit-content;
+    margin: 5px;
+    margin-bottom: 10px;
+    max-width: 20px;
+
+}
+.text {
+    border-radius: 5px;
+    justify-content:stretch; 
+    color: #000000;
+    background-color: #8ABD82;
+}
+.sections {
+    font-family: "Jost", sans-serif;
+    font-weight: 500;
+
+}
+.container-fluid {
+    margin-right: 20px;
+}
