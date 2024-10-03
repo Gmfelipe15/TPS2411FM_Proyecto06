@@ -30,24 +30,25 @@ def index():
 @app.route('/signup', methods= ['GET','POST'])
 def signup():
     if request.method == 'POST':
-        name = request.form ['name']
-        email = request.form ['email']
-        password = request.form ['password']
-        direccion = request.form ['direccion']
-        telefono = request.form ['telefono']
+        name = request.form['name']
+        email = request.form['email']
+        password = generate_password_hash(request.form['password'])  # encripta la contraseña
+        direccion = request.form['direccion']
+        telefono = request.form['telefono']
         
-        cursor = mysql.connection.cursor()
-        cursor.execute('SELECT email FROM signup WHERE email = %s', (email,))
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT email FROM signup WHERE email = %s', (email,))
         
-        if cursor.fetchone():
+        if cur.fetchone():
             flash('⚠️ Este email ya está registrado')
             return redirect(url_for('signup'))
-        cursor.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', (name, email, password, direccion, telefono))
-
+        cur.execute('INSERT INTO signup (name, email, password, direccion, telefono) VALUES (%s, %s, %s, %s, %s)', 
+                    (name, email, password, direccion, telefono))
         mysql.connection.commit()
         flash('✅ Cuenta creada satisfactoriamente')
         return redirect(url_for('login'))
     return render_template('01-SIGN_UP.html')
+
 
 @app.route('/usuarios') #Mostrar los datos de usuarios en la tabla 
 def mostrar_usuarios():
@@ -63,16 +64,28 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM signup WHERE email=%s AND password=%s', (email, password))
+        cur.execute('SELECT * FROM signup WHERE email = %s', (email,))
         user = cur.fetchone()
-        if user:
-            session['user'] = user[0]
-            return redirect(url_for('index'))
+
+        if user and check_password_hash(user[3], password):  # Verify hashed password
+            session['logged_in'] = True  # User is logged in
+            session['user_id'] = user[0]  # Store user ID in session
+            session['rol'] = user[6]  # Store role (rol) in session (user[6] should be the 'rol' field)
+            
+            if session['rol'] == 0:  # If role is 0 (admin)
+                flash('Inicio de sesión exitoso como administrador')
+                return redirect(url_for('homeadmin'))  # Redirect admins to the admin home page
+            else:
+                flash('Inicio de sesión exitoso')
+                return redirect(url_for('index'))  # Redirect regular users to the main page
         else:
             flash('⚠️ Nombre o contraseña incorrectos')
+            return redirect(url_for('login'))
+    
     return render_template('02-LOGIN.html')
-      
+
 
 
 @app.route('/editar_usuarios/<id>') #función para que en la tabla se logre editar información de la basedatos
@@ -161,17 +174,25 @@ def producto():
 
 @app.route('/signup_a', methods=['GET', 'POST'])
 def signup_a():
- if request.method == 'POST':
-        name = request.form ['name']
-        email = request.form ['email']
-        password = request.form ['password']
-        tipo = request.form ['tipo']
-        cursor = mysql.connection.cursor()
-        cursor.execute('INSERT INTO signup (name, email, password, tipo) VALUES (%s, %s, %s, %s)', (name, email, password, tipo))
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        password = generate_password_hash(request.form['password'])  
+        rol = 0  
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT email FROM signup WHERE email = %s', (email,))
+        
+        if cur.fetchone():
+            flash('⚠️ Este email ya está registrado como administrador')
+            return redirect(url_for('signup_a'))
+
+        cur.execute('INSERT INTO signup (name, email, password, rol) VALUES (%s, %s, %s, %s)', (name, email, password, rol))
         mysql.connection.commit()
-        flash('¡Usuario creado!')
-        return redirect(url_for('signup_a'))
- return render_template('14-signup_a.html')
+        flash('✅ Cuenta de administrador creada satisfactoriamente')
+        return redirect(url_for('login'))  
+    
+    return render_template('14-signup_a.html')
+
 
 @app.route('/cambio_contraseña')
 def cambio_contraseña():
@@ -219,9 +240,11 @@ def subir_producto():
 
 @app.route('/logout')
 def logout():
-    session.pop('user', None)
+    session.pop('logged_in', None)  
+    session.pop('user_id', None)    
+    flash('Sesión cerrada exitosamente')  
     return redirect(url_for('index'))
-    
+
 @app.route('/homeadmin')
 def homeadmin():
     return render_template('homeadmin.html')
