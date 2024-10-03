@@ -7,11 +7,12 @@ body {
     font-weight:600;
 }
 .container {
-    background-color: #8ABD82; /* Fondo gris claro */
+    background-color: #8ABD82;
     padding: 20px;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
-.btn {
+.btn1 {
     background-color: #09140F;
     color: #8dcf82;
     border:solid #70D460;
