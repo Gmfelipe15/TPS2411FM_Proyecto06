@@ -72,9 +72,9 @@ def login():
         if user and check_password_hash(user[3], password):  
             session['logged_in'] = True  
             session['user_id'] = user[0]  
-            session['rol'] = user[6]  
+            session['rol'] = user[6]  #No sé si se refiere a otro tipo de rol, o al rol que se debe llamar tipo, si no funciona entonces cambiarlo a "tipo"
             
-            if session['rol'] == 0:  
+            if session['rol'] == 0:  #Aquí lo mismo
                 flash('Inicio de sesión exitoso como administrador')
                 return redirect(url_for('homeadmin'))  
             else:
@@ -107,7 +107,7 @@ def actualizar_usuario(id):
         cur = mysql.connection.cursor()
         cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s, tipo = %s WHERE id = %s', (name, email, password, direccion, telefono, tipo, id))
         mysql.connection.commit()
-        flash('Contacto actualizado satisfactoriamente')
+        flash('Usuario actualizado satisfactoriamente')
         return redirect(url_for('mostrar_usuarios')) #Al terminar de editar redireccionará a la tabla de usuarios esto poniendo el def que se puso anteriormente
 
 @app.route('/eliminar_usuario/<string:id>')
@@ -115,7 +115,7 @@ def eliminar(id):
    cur = mysql.connection.cursor()
    cur.execute('DELETE FROM signup WHERE id = {0}'.format(id))
    mysql.connection.commit()
-   flash('Contacto removido satisfactoriamente')
+   flash('Usuario removido satisfactoriamente')
    return redirect(url_for('mostrar_usuarios'))
 
 #Conexión al formulario de contacto
@@ -178,7 +178,7 @@ def signup_a():
         name = request.form['name']
         email = request.form['email']
         password = generate_password_hash(request.form['password'])  
-        rol = 0  
+        tipo = 0  
         cur = mysql.connection.cursor()
         cur.execute('SELECT email FROM signup WHERE email = %s', (email,))
         
@@ -186,7 +186,7 @@ def signup_a():
             flash('⚠️ Este email ya está registrado como administrador')
             return redirect(url_for('signup_a'))
 
-        cur.execute('INSERT INTO signup (name, email, password, rol) VALUES (%s, %s, %s, %s)', (name, email, password, rol))
+        cur.execute('INSERT INTO signup (name, email, password, tipo) VALUES (%s, %s, %s, %s)', (name, email, password, tipo))
         mysql.connection.commit()
         flash('✅ Cuenta de administrador creada satisfactoriamente')
         return redirect(url_for('login'))  

@@ -91,7 +91,6 @@
         <th>ID</th>
         <th>Nombre</th>
         <th>Email</th>
-        <th>Contraseña</th>
         <th>Dirección</th>
         <th>Teléfono</th>
         <th>Rol</th> <!-- Tipo de usuario -->
@@ -104,7 +103,6 @@
         <td>{{ signups.0 }}</td>
         <td>{{ signups.1 }}</td>
         <td>{{ signups.2 }}</td>
-        <td>{{ signups.3 }}</td>
         <td>{{ signups.4 }}</td>
         <td>{{ signups.5 }}</td>
         <td>{{ signups.6 }}</td> <!-- el tipo de permiso que debería tener el usuario CLIENTE o ADMIN -->
@@ -116,6 +114,9 @@
       {% endfor %}
     </tbody>    
   </table>
+  <div class="row">
+    <p style="color: antiquewhite;">*Todas las contraseñas se encuentran encriptadas con werkzeug.security - generate_password_hash, no se muestran en esta tabla por la extensión de la codificación.</p>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
