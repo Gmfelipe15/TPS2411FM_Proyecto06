@@ -4,33 +4,26 @@ from flask_session import Session
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import json
-
 import os
- 
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
 
 #Conexión a mysql
-
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'beiweb'
+app.config['MYSQL_USER'] = 'syntax'
 app.config['MYSQL_PASSWORD'] = 'syntaxis'
 app.config['MYSQL_DB'] = 'bei'
 mysql = MySQL(app)
-     
 
-
-
-
-
-# configuraciones para la conexión
-app.secret_key = 'mysecretkey'
+app.secret_key = 'mysecretkey' # configuraciones para la conexión
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
-app.config['UPLOAD_FOLDER']='static/uploads'
-app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #(2mB x 1024px 1024px)
-
-@app.route('/')#Ruta para el home signup
+@app.route('/')#Ruta para el home index.html
 def index():
    return render_template('index.html')
 
@@ -142,48 +135,15 @@ def carrito():
     # if 'user' in session:
         return render_template('09-CARRITO.html')
     # else:
-    #     flash('⚠️ Debe logearse para ver su carrito')
+        # flash('⚠️ Debe logearse para ver su carrito')
         return redirect(url_for('login'))
-
-@app.route('/añadir_al_carrito/<int:producto_id')
-def añadir_al_carrito(producto_id):
-    connection = MySQL()
-    if connection:
-        cursor = connection.cursor(dictionary=True)
-        cursor.execute("SELECT * FROM productos WHERE id = %s", (producto_id))
-        producto = cursor.fetchone()
-        cursor.close()
-        connection.close()
-
-        if producto:
-            carrito = session.get('carrito', {})
-            if str(producto_id) in carrito:
-                if carrito[str(producto_id)]['cantidad'] < producto['cantidad']:
-                    carrito[str(producto_id)]['cantidad'] += 1
-                    flash(f"añadiste {producto['nombre']}' en el carrito", 'success')
-                else:
-                    flash(f"no tenemos suficiente cantidad de{['nombre']}", 'warning')
-            else:
-                carrito[str(producto_id)] = {
-                    'nombre': producto['nombre'],
-                    'precio': float(producto['precio']),
-                    'cantidad': 1
-                }
-                flash(f"Añadiste {producto['nombre']} al carrito", 'success')
-            session['carrito'] = carrito
-        else:
-            flash(f"No encontramos el producto", 'danger')
-    else:
-        flash(f"No conectamos con la basedata", 'danger')
-    return redirect(url_for('index'))
-
 
 @app.route('/pago') 
 def pago():
     if 'user' in session:
         return render_template('13-PAGO.html')
     else:
-        flash('⚠️ Debe logearse para realizar una compra')
+        flash('⚠️ Debe iniciar sesión para realizar una compra')
         return redirect(url_for('login'))
     
 
@@ -215,9 +175,12 @@ def signup_a():
 
 @app.route('/cambio_contraseña')
 def cambio_contraseña():
-    return render_template('05-CAMBIO_DE_CONTRASEÑA.html')
+    return render_template('05-cambibibi.html')
 
 #Subir productos
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/subir_producto', methods= ['GET','POST'])
 def subir_producto():
