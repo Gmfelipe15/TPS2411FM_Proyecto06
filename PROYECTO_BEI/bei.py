@@ -72,13 +72,14 @@ def login():
         if user and check_password_hash(user[3], password):  
             session['logged_in'] = True  
             session['user_id'] = user[0]  
-            session['rol'] = user[6]  #No sé si se refiere a otro tipo de rol, o al rol que se debe llamar tipo, si no funciona entonces cambiarlo a "tipo"
+            session['tipo'] = user[6]  #No sé si se refiere a otro tipo de rol, o al rol que se debe llamar tipo, si no funciona entonces cambiarlo a "tipo"
             
-            if session['rol'] == 0:  #Aquí lo mismo
+            if session['tipo'] == 1:  #Aquí lo mismo
                 flash('Inicio de sesión exitoso como administrador')
                 return redirect(url_for('homeadmin'))  
             else:
-                flash('Inicio de sesión exitoso')
+                if session['tipo'] == 0:
+                 flash('Inicio de sesión exitoso')
                 return redirect(url_for('index')) 
         else:
             flash('⚠️ Nombre o contraseña incorrectos')
