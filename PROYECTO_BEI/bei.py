@@ -177,6 +177,16 @@ def signup_a():
 def cambio_contraseña():
     return render_template('05-cambibibi.html')
 
+@app.route('/codigo_verificacion')
+def codigo_verificacion():
+    return render_template('04-CODIGO_DE_VERIFICACION.html')
+
+@app.route('/verificación_exitosa')
+def verificacion_exitosa():
+    return render_template('06-VERIFICACION_EXITOSA.html')
+
+
+
 #Subir productos
 def allowed_file(filename):
     return '.' in filename and \
