@@ -244,17 +244,30 @@ def subir_producto():
         descripcion = request.form ['descripcion']
         precio = request.form ['precio']
         cantidad = request.form ['cantidad']
-        imagen = request.files.get ['imagen']
+        imagen = request.form ['imagen']
+        disponibilidad = request.form ['disponibilidad']
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen) VALUES (%s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen))
+        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, disponibilidad) VALUES (%s, %s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen, disponibilidad))
         mysql.connection.commit()
         flash(f'✅ El producto {nombre} ¡ha sido añadido a la tienda!')
-        return redirect(url_for('conozcanos'))
+        return redirect(url_for('inventario'))
     return render_template('subir_producto.html')
+
+@app.route('/eliminar_producto/<string:id>')
+def eliminar_p(id):
+   cur = mysql.connection.cursor()
+   cur.execute('DELETE FROM productos WHERE id = {0}'.format(id))
+   mysql.connection.commit()
+   flash('Producto removido satisfactoriamente')
+   return redirect(url_for('inventario'))
 
 @app.route('/inventario')
 def inventario():
-    return render_template('10-INVENTARIO.html')
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM productos')
+    datos_p = cur.fetchall()
+    print('datos')
+    return render_template('10-INVENTARIO.html', producto = datos_p)
 
 # Seguridad
 
