@@ -69,17 +69,17 @@ def login():
         cur.execute('SELECT * FROM signup WHERE email = %s', (email,))
         user = cur.fetchone()
 
-        if user and check_password_hash(user[3], password):  # Verify hashed password
-            session['logged_in'] = True  # User is logged in
-            session['user_id'] = user[0]  # Store user ID in session
-            session['rol'] = user[6]  # Store role (rol) in session (user[6] should be the 'rol' field)
+        if user and check_password_hash(user[3], password):  
+            session['logged_in'] = True  
+            session['user_id'] = user[0]  
+            session['rol'] = user[6]  
             
-            if session['rol'] == 0:  # If role is 0 (admin)
+            if session['rol'] == 0:  
                 flash('Inicio de sesión exitoso como administrador')
-                return redirect(url_for('homeadmin'))  # Redirect admins to the admin home page
+                return redirect(url_for('homeadmin'))  
             else:
                 flash('Inicio de sesión exitoso')
-                return redirect(url_for('index'))  # Redirect regular users to the main page
+                return redirect(url_for('index')) 
         else:
             flash('⚠️ Nombre o contraseña incorrectos')
             return redirect(url_for('login'))
