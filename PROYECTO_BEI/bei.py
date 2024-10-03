@@ -179,10 +179,10 @@ def signup_a():
         name = request.form['name']
         email = request.form['email']
         password = generate_password_hash(request.form['password'])  
-        tipo = 0  
+        #tipo = 0  anterior variable de tipo
+        tipo = request.form['tipo'] #No se define la variable sino que según el formulario, le da el valor (1 ó 0) :p
         cur = mysql.connection.cursor()
         cur.execute('SELECT email FROM signup WHERE email = %s', (email,))
-        
         if cur.fetchone():
             flash('⚠️ Este email ya está registrado como administrador')
             return redirect(url_for('signup_a'))
