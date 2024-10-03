@@ -19,6 +19,9 @@
         <img src="../static/IMAGENES/Captura_de_pantalla_2024-03-21_093005-removebg-preview (1).png" alt="Your Image" class="img-fluid">
     </div>
     <div class="col-md-6" id="formulario">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Debido a limitaciones presupuestarias, no fue posible implementar las funcionalidades de cambio de contraseña y verificación de identidad en la página web. Estas características requerían la contratación de un servicio externo adicional. Sin embargo, los diseños y estructuras básicas (templates) para estas secciones ya se encuentran desarrollados, lo que permitiría una rápida integración en el futuro, una vez se disponga del presupuesto necesario. Las siguientes puede visualizarlas presionando el botón de color verde.</strong> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
       <h2>Cambio de contraseña</h2><br>
       <form id="login-form">
         <div class="mb-3">
@@ -26,11 +29,12 @@
           <input name="password"  type="password" class="form-control" id="email" placeholder="Incluya símbolos y mayúsculas">
         </div>
         <div class="b_primario">
-          <input action="/signup" type="submit" class="btn_1" value="Cambiar contraseña">
+          <input action="/codigo_verificacion" type="submit" class="btn_1" value="Cambiar contraseña">
         </div>
       </form>
       <div class="col-md-6"></div>
   </div>
+
 {% endblock %}  
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> 
