@@ -70,15 +70,15 @@
         </div>
 
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-          {% for producto in productos %}
             <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+          {% for producto in productos %}
             <div class="producto">
-              <div class="card-body">
-                <h5 class="card-title">BEI - Blanca</h5>
-                <p class="card-text">$20.000 COP</p>
-                <a href="/producto" class="btn btn-success">Ver más</a>
-                <a href="{{ url_for('añadir_al_carrito', product_id=producto.id) }}" class="btn btn-success">Agregar al Carrito</a>
-              </div>
+              <h2>{{ producto.nombre }}</h2>
+              <p>{{ producto.descripcion }}</p>
+              <p>Precio: ${{ '%.2f'|format(producto.precio) }}</p>
+              <p>Stock: {{ producto.cantidad }}</p>
+              <a href="/producto" class="btn btn-success">Ver más</a>
+              <a href="{{ url_for('añadir_al_carrito', product_id=producto.id) }}" class="btn btn-success">Agregar al Carrito</a>
             </div>
           {% endfor %}
         </div>

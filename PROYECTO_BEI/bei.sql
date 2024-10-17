@@ -124,3 +124,9 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+INSERT INTO productos (nombre, descripcion, precio, cantidad) VALUES
+('ejemplo1', 'Descripción del producto 1', 1000.00, 100),
+('ejemplo2', 'Descripción del producto 2', 2000.00, 50),
+('ejemplo3', 'Descripción del producto 3', 3000.00, 200);
