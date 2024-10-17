@@ -1,3 +1,6 @@
+{% extends "navbar.html" %}
+{% block tittle %}signup{% endblock %}
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +15,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/subir_producto.css') }}">
 </head>
 <body>
-    
-    <br>
-    <br>
+
     <div class="container text-center">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -26,7 +27,7 @@
         {% endif %}
         {% endwith %}
         <h1>Subir producto a la tienda</h1>
-        <br>
+
         <form action="{{ url_for('subir_producto') }}" method="POST">
             <div class="mb-3">
                 <label><strong>Nombre del producto</strong></label>
@@ -54,9 +55,10 @@
                     <option value="No_disponible">No disponible</option>
                 </select>
             </div>
-            <button type="submit" class="btn">Subir</button>
+            <button type="submit" class="btn1">Subir</button>
         </form>
     </div>
+    {% endblock %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
