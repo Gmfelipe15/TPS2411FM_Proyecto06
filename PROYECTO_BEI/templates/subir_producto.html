@@ -1,6 +1,8 @@
 {% extends "navbar.html" %}
 {% block tittle %}signup{% endblock %}
 {% block content %}
+{% if session.get('tipo') == 1 %} <!-- Se mostrará la página únicamente a ADMINS 
+agregar la página -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +60,19 @@
             <button type="submit" class="btn1">Subir</button>
         </form>
     </div>
+    {% else %}
+    
+    <h1>😓 No tienes una cuenta de Administrador, el acceso a esta página no es posible para ti por el momento</h1>
+    <img src="https://gruporeforma.reforma.com/graficohtml5/interfase/gifs_animados/images/intro_KeyboardCat.gif" alt="gatoadvertenciaA">
+    <div class="b_primario">
+        <button type="submit" class="btn_1"> <a href="/signup">Registrate</a></button>
+        <button type="submit" class="btn_1"> <a href="/login">Inicia sesión</a></button>
+    </div>    
+    {% endif %}
+    
     {% endblock %}
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
