@@ -7,7 +7,7 @@ import json
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER']= '../static/uploads'
+app.config['UPLOAD_FOLDER']= 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = 'png', 'jpg', 'jpeg'
 app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
 
@@ -228,13 +228,6 @@ def subir_producto():
 def allowed_file(filename):
     allowed_extensions = {'jpg'}
     return '.' in filename and filename.rsplit('.',1)[1].lower() in allowed_extensions
-
-@app.route('/productos')
-def productos():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM productos')
-    vista_productos = cur.fetchall()
-    return render_template('productos.html', productos = vista_productos)
 
 @app.route('/eliminar_producto/<string:id>')
 def eliminar_p(id):

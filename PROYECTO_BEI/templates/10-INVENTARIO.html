@@ -34,17 +34,16 @@ agregar la página -->
       <tbody>
         {% for productos in producto %}
         <tr>
-          <td>{{ productos.0 }}</td>
-          <td>{{ productos.1 }}</td>
-          <td>{{ productos.2 }}</td>
-          <td>{{ productos.3 }}</td>
-          <td>{{ productos.4 }}</td>
-          <td>{{ productos.5 }}</td>
-          <td>{{ productos.6 }}</td>
-          <td>{{ productos.7 }}</td> 
+          <td>{{ productos.0 }}</td> <!-- ID -->
+          <td>{{ productos.1 }}</td> <!--Nombre -->
+          <td>{{ productos.2 }}</td> <!-- Descripción -->
+          <td>{{ productos.3 }}</td> <!-- Precio -->
+          <td>{{ productos.4 }}</td> <!-- Cantidad -->
+          <td>{{ productos.5 }}</td> <!-- Imagen -->
+          <td>{{ productos.6 }}</td> <!-- Estado -->
           <td>
             <a href="/eliminar_producto/{{productos.0}}" class="btn btn-sm btn-danger">Eliminar</a>
-          </td>
+          </td> <!-- Acciones -->
         </tr>
         {% endfor %}
         <a href="/subir_producto" class="btn btn-sm btn-success">+ Agregar un nuevo producto</a>
