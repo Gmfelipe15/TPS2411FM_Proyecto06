@@ -18,27 +18,26 @@
         </div>
 
         <div class="col-md-6" id="verificacion">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Para poder crear una cuenta con privilegios de administrador, deberá escribir la contraseña dada previamente por un admin de BEI.</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
             <h2 class="text-white">Ingrese contraseña de acceso</h2><br>
             <form id="verify-password-form" class="mb-3">
                 <div class="mb-3">
                     <label for="access-password" class="form-label">CONTRASEÑA DE ACCESO</label>
                     <input type="password" class="form-control" id="access-password" placeholder="Ingrese la contraseña de acceso" required>
+                    <button type="button" id="verify-btn" class="btn btn-success">Verificar</button>
                 </div>
-                <button type="button" id="verify-btn" class="btn btn-success">Verificar</button>
+
             </form>
         </div>
+        
 
         <div class="col-md-6 d-none" id="formulario">
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong>{{ message }}</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
+
+
+
             
             <h2>Registro para admins</h2><br>
 
@@ -61,8 +60,8 @@
                 <div class="form-group mb-3">
                     <label for="tipo" class="form-label">ROL</label>
                     <select class="form-control" id="tipo" name="tipo" required>
-                        <option value="1">Administrador (1)</option>
-                        <option value="0">Cliente (0)</option>
+                        <option value="1">ADMIN (1)</option>
+                        <option value="0">CLIENTE (0)</option>
                     </select>
                 </div>
                 
@@ -89,7 +88,7 @@
             document.getElementById('verificacion').classList.add('d-none');
             document.getElementById('formulario').classList.remove('d-none');
         } else {
-            alert('Contraseña incorrecta, intente de nuevo.');
+            alert('Contraseña incorrecta, solicitela a un ADMIN de BEI');
         }
     });
 </script>

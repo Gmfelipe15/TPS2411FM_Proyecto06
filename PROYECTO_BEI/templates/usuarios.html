@@ -73,12 +73,25 @@ agregar la página -->
 
     {% else %}
     
-    <h1>😓 No tienes una cuenta de Administrador, el acceso a esta página no es posible para ti por el momento</h1>
-    <img src="https://gruporeforma.reforma.com/graficohtml5/interfase/gifs_animados/images/intro_KeyboardCat.gif" alt="gatoadvertenciaA">
-    <div class="b_primario">
-        <button type="submit" class="btn_1"> <a href="/signup">Registrate</a></button>
-        <button type="submit" class="btn_1"> <a href="/login">Inicia sesión</a></button>
-    </div>    
+    <br>
+    <br>
+    <h1 class="text-white">😓 No tienes una cuenta de Administrador, el acceso a esta página no es posible para ti por el momento</h1>
+    <br><br>
+        <div class="d-flex justify-content-center">
+          <img src="https://gruporeforma.reforma.com/graficohtml5/interfase/gifs_animados/images/intro_KeyboardCat.gif" alt="gatoadvertenciaA">
+      </div>
+      <br>
+            <div class="d-flex justify-content-center ">
+              <li>
+                <a href="/signup"> <button type="submit" class="a"> Registrate </button></a>
+              </li>
+              <li>
+    
+                <a href="/login"> <button type="submit" class="a"> Iniciar sesion </button></a>
+        
+              </li>
+        </div> 
+      <br> <br> <br><br><br>
     {% endif %}
     
     {% endblock %}
