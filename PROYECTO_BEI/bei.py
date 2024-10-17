@@ -7,7 +7,7 @@ import json
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER']= '../static/uploads'
+app.config['UPLOAD_FOLDER']= 'static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = 'png', 'jpg', 'jpeg'
 app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
 
@@ -22,6 +22,7 @@ app.secret_key = 'mysecretkey' # configuraciones para la conexión
 app.config['SESSION_TYPE'] = 'filesystem'
 Session(app)
 
+#CHATBOT:
 # Estados de la conversación
 conversations = {}
 
@@ -110,7 +111,7 @@ def chat():
     return jsonify({'response': bot_response})
 
     
-
+#Agregar Usuario
 @app.route('/signup', methods= ['GET','POST'])
 def signup():
     if request.method == 'POST':
@@ -156,7 +157,7 @@ def login():
         if user and check_password_hash(user[3], password):  
             session['logged_in'] = True  
             session['user_id'] = user[0]  
-            session['tipo'] = user[6]  #No sé si se refiere a otro tipo de rol, o al rol que se debe llamar tipo, si no funciona entonces cambiarlo a "tipo"
+            session['tipo'] = user[6]  #Roles
             
             if session['tipo'] == 1:  #Aquí lo mismo
                 flash('Inicio de sesión exitoso como administrador')
@@ -292,7 +293,6 @@ def signup_a():
         name = request.form['name']
         email = request.form['email']
         password = generate_password_hash(request.form['password'])  
-        #tipo = 0  anterior variable de tipo
         tipo = request.form['tipo'] #No se define la variable sino que según el formulario, le da el valor (1 ó 0) :p
         cur = mysql.connection.cursor()
         cur.execute('SELECT email FROM signup WHERE email = %s', (email,))
@@ -320,6 +320,7 @@ def codigo_verificacion():
 def verificacion_exitosa():
     return render_template('06-VERIFICACION_EXITOSA.html')
 
+#SUBIR PRODUCTO
 @app.route('/subir_producto', methods= ['GET','POST'])
 def subir_producto():
     if request.method == 'POST':
@@ -331,7 +332,7 @@ def subir_producto():
         disponibilidad = request.form ['disponibilidad']
         if imagen and imagen.filename:
             if not allowed_file(imagen.filename):
-                flash('Solo se permiten archivos JPG, JPEG, PNG')
+                flash('Solo se permiten archivos JPG')
                 return redirect(url_for('subir_producto'))
             imagen_filename = secure_filename(imagen.filename)
             imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], imagen_filename))
@@ -340,6 +341,7 @@ def subir_producto():
             imagen_filename = None
         
         cur = mysql.connection.cursor()
+        # "Productos" es la tabla 
         cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, disponibilidad) VALUES (%s, %s, %s, %s, %s, %s)', 
                     (nombre, descripcion, precio, cantidad, imagen_filename, disponibilidad))
         mysql.connection.commit()
