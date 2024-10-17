@@ -30,7 +30,7 @@ agregar la página -->
         {% endwith %}
         <h1>Subir producto a la tienda</h1>
 
-        <form action="{{ url_for('subir_producto') }}" method="POST">
+        <form action="{{ url_for('subir_producto') }}" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label><strong>Nombre del producto</strong></label>
                 <input type="text" class="form-control" name="nombre" placeholder="Nombre del producto">

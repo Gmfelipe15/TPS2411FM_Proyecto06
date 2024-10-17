@@ -5,12 +5,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import json
 import os
-"""UPLOAD_FOLDER = 'static/uploads'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-"""
+
 app = Flask(__name__)
-"""app.config['UPLOAD_FOLDER']= UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)"""
+app.config['UPLOAD_FOLDER']= '../static/uploads'
+app.config['ALLOWED_EXTENSIONS'] = 'png', 'jpg', 'jpeg'
+app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
 
 #Conexión a mysql
 app.config['MYSQL_HOST'] = 'localhost'
@@ -25,7 +24,11 @@ Session(app)
 
 @app.route('/')#Ruta para el home index.html
 def index():
-   return render_template('index.html')
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM productos')
+    vista_productos = cur.fetchall()
+    return render_template('index.html', producto = vista_productos)
+    
 
 @app.route('/signup', methods= ['GET','POST'])
 def signup():
@@ -202,14 +205,36 @@ def subir_producto():
         descripcion = request.form ['descripcion']
         precio = request.form ['precio']
         cantidad = request.form ['cantidad']
-        imagen = request.form ['imagen']
+        imagen = request.files.get ('imagen')
         disponibilidad = request.form ['disponibilidad']
+        if imagen and imagen.filename:
+            if not allowed_file(imagen.filename):
+                flash('Solo se permiten archivos JPG, JPEG, PNG')
+                return redirect(url_for('subir_producto'))
+            imagen_filename = secure_filename(imagen.filename)
+            imagen.save(os.path.join(app.config['UPLOAD_FOLDER'], imagen_filename))
+
+        else:
+            imagen_filename = None
+        
         cur = mysql.connection.cursor()
-        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, disponibilidad) VALUES (%s, %s, %s, %s, %s, %s)', (nombre, descripcion, precio, cantidad, imagen, disponibilidad))
+        cur.execute('INSERT INTO productos (nombre, descripcion, precio, cantidad, imagen, disponibilidad) VALUES (%s, %s, %s, %s, %s, %s)', 
+                    (nombre, descripcion, precio, cantidad, imagen_filename, disponibilidad))
         mysql.connection.commit()
         flash(f'✅ El producto {nombre} ¡ha sido añadido a la tienda!')
         return redirect(url_for('inventario'))
     return render_template('subir_producto.html')
+
+def allowed_file(filename):
+    allowed_extensions = {'jpg'}
+    return '.' in filename and filename.rsplit('.',1)[1].lower() in allowed_extensions
+
+@app.route('/productos')
+def productos():
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM productos')
+    vista_productos = cur.fetchall()
+    return render_template('productos.html', productos = vista_productos)
 
 @app.route('/eliminar_producto/<string:id>')
 def eliminar_p(id):

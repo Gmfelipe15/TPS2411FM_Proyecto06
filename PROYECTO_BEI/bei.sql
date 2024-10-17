@@ -11,6 +11,9 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+-- PARA CREAR EL USUARIO SI NO EXISTE (USER= syntax PASSWORD= syntaxis)
+-- CREATE USER 'syntax'@'localhost' IDENTIFIED VIA mysql_native_password USING '***';GRANT ALL PRIVILEGES ON *.* TO 'syntax'@'localhost' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,8 +37,7 @@ CREATE TABLE `contactus` (
   `message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
--- --------------------------------------------------------
-
+-- -------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `productos`
 --
@@ -46,7 +48,7 @@ CREATE TABLE `productos` (
   `descripcion` varchar(255) DEFAULT 'Sin descripción',
   `precio` varchar(10) NOT NULL,
   `cantidad` int(5) DEFAULT 1,
-  `imagen` varchar(30) DEFAULT 'Sin imagen',
+  `imagen` varchar(255) DEFAULT 'Sin imagen',
   `disponibilidad` varchar(30) DEFAULT 'Disponible'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
