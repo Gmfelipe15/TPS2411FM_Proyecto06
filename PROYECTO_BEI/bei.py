@@ -7,7 +7,7 @@ import json
 import os
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER']= 'static/uploads'
+app.config['UPLOAD_FOLDER']= '../static/uploads'
 app.config['ALLOWED_EXTENSIONS'] = 'png', 'jpg', 'jpeg'
 app.config['MAX_CONTENT_LENGTH']= 2 * 1024 * 1024 #significa: (2mB x 1024px 1024px)
 
