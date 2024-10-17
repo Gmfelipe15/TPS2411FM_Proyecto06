@@ -70,12 +70,17 @@
         </div>
 
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-          <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
-          <div class="card-body">
-            <h5 class="card-title">BEI - Blanca</h5>
-            <p class="card-text">$20.000 COP</p>
-            <a href="/producto" class="btn btn-success">Ver más</a>
-          </div>
+          {% for producto in productos %}
+            <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+            <div class="producto">
+              <div class="card-body">
+                <h5 class="card-title">BEI - Blanca</h5>
+                <p class="card-text">$20.000 COP</p>
+                <a href="/producto" class="btn btn-success">Ver más</a>
+                <a href="{{ url_for('añadir_al_carrito', product_id=producto.id) }}" class="btn btn-success">Agregar al Carrito</a>
+              </div>
+            </div>
+          {% endfor %}
         </div>
         
       </div>

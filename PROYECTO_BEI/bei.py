@@ -149,7 +149,48 @@ def mostrar_mensajes():
 
 @app.route('/carrito') 
 def carrito():
+    carrito = session.get('carrito', {})
+    total = sum(item['precio'] * item['cantidad'] for item in carrito.values())
+    # if 'user' in session:
     return render_template('09-CARRITO.html')
+    # else:
+    #     flash('⚠️ Debe logearse para ver su carrito')
+    return render_template('09-CARRITO.html')
+
+
+@app.route('/añadir_al_carrito/<int:product_id>')
+def añadir_al_carrito(product_id):
+    connection = MySQL()
+    if connection:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM productos WHERE id = %s", (product_id))
+        producto = cursor.fetchone()
+        cursor.close()
+        connection.close()
+
+        if producto:
+            carrito = session.get('carrito', {})
+            if str(product_id) in carrito:
+                if carrito[str(product_id)]['cantidad'] < producto['cantidad']:
+                    carrito[str(product_id)]['cantidad'] += 1
+                    flash(f"añadiste {producto['nombre']}' en el carrito", 'success')
+                else:
+                    flash(f"no tenemos suficiente cantidad de{['nombre']}", 'warning')
+            else:
+                carrito[str(product_id)] = {
+                    'nombre': producto['nombre'],
+                    'precio': float(producto['precio']),
+                    'cantidad': 1
+                }
+                flash(f"Añadiste {producto['nombre']} al carrito", 'success')
+            session['carrito'] = carrito
+        else:
+            flash(f"No encontramos el producto", 'danger')
+    else:
+        flash(f"No conectamos con la basedata", 'danger')
+    return redirect(url_for('index'), carrito = producto)
+
+
 
 @app.route('/pago') 
 def pago():

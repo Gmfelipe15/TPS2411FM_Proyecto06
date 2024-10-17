@@ -9,6 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <div class="container">
+  {% if carrito %}
 <table class="table align-middle">
     <thead class="table-success align-middle">
       <tr>
@@ -21,6 +22,7 @@
       </tr>
     </thead>
     <tbody>
+      {% for id, item in carrito.items() %}
       <tr style="background-color: #17412D;">
         <td> <img src="../static/IMAGENES/07-BOLSITA.jpg" style="width: 80%; height: 80%;"></td>
         <td>bolsa ecológica isotérmica blanca</td>
@@ -29,6 +31,7 @@
         <td>1</td>
         <td>$20000</td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 
@@ -38,6 +41,10 @@
       <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn btn-outline-success">proceder al pago</button>
     </a>
   </div>
+</div>
+{% else %}
+<p>no hay nada</p>
+{% endif %}
 </div>
 {% endblock %}  
 </body>
