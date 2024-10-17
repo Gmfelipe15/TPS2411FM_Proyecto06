@@ -1,8 +1,8 @@
 {% extends "navbar.html" %}
-{% block tittle %}ADMIN - Registro{% endblock %}
+{% block title %}ADMIN - Registro{% endblock %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='css/01-SIGN_UP.css') }}">     
-<title>Signup_a</title>
+<title>Signup</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6" id="logo">
-            <img src="{{ url_for('static', filename='IMAGENES/01.png') }}" alt="logo" class="img-fluid">
+            <img src="{{ url_for('static', filename='IMAGENES/011.png') }}" alt="logo" class="img-fluid">
         </div>
 
         <div class="col-md-6" id="verificacion">
-            <h2>Ingrese contraseña de acceso para el Registro de Admins</h2><br>
-            <form id="verify-password-form">
+            <h2 class="text-white">Ingrese contraseña de acceso</h2><br>
+            <form id="verify-password-form" class="mb-3">
                 <div class="mb-3">
                     <label for="access-password" class="form-label">CONTRASEÑA DE ACCESO</label>
-                    <input type="password" class="form-control" id="access-password" placeholder="Ingrese la contraseña de acceso">
+                    <input type="password" class="form-control" id="access-password" placeholder="Ingrese la contraseña de acceso" required>
                 </div>
-                <button type="button" id="verify-btn" class="btn btn-primary">Verificar</button>
+                <button type="button" id="verify-btn" class="btn btn-success">Verificar</button>
             </form>
         </div>
 
@@ -95,4 +95,3 @@
 </script>
 
 {% endblock %}
-</html>
