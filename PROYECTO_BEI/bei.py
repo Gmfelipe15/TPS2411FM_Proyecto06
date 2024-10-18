@@ -33,6 +33,7 @@ def index():
     vista_productos = cur.fetchall()
     return render_template('index.html', producto = vista_productos)
 
+
 # Ruta para el chatbot solo la accion no hay html
 @app.route('/chat', methods=['POST'])
 def chat():

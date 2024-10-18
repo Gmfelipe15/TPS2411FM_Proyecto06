@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beibot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Felipe</a></li>
+            <li><a href="#">Esteban</a></li>
+            <li><a href="#">Juan</a></li>
+            <li><a href="#">Cesar</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Bienvenido a la tienda de bolsas ecológicas Bei</h1>
+        <p>Navega por nuestros productos en la tienda.</p>
+    </div>
+
+    <!-- Chatbot flotante -->
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <h3>Beibot</h3>
+            <button id="close-chatbot">X</button>
+        </div>
+        <div id="chatbot-content">
+            <div id="chat-log"></div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Escribe un mensaje">
+                <button id="send-button">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

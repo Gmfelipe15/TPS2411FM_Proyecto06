@@ -1,0 +1,99 @@
+.navbar {
+    background-color: #d16710;
+    padding: 1em;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #ccc;
+}
+
+.content {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* Estilos para el chatbot flotante */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #f5eeee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+#chatbot-header {
+    background-color: #860606;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-header h3 {
+    margin: 0;
+}
+
+#close-chatbot {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#chatbot-content {
+    padding: 10px;
+}
+
+#chat-log {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f3caca;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+#chat-form {
+    display: flex;
+}
+
+#user-input {
+    flex: 1;
+    padding: 5px;
+}
+
+#send-button {
+    padding: 5px;
+}
