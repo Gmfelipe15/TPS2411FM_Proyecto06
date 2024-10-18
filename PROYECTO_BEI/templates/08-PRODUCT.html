@@ -9,33 +9,42 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='FAVI/favicon-32x32.png') }}">
 
   <div class="row">
-  <div class="col-md-5">
-    <div class="producto">
-      <img src="../static/IMAGENES/Bolsa_bei.png" alt="Bolsa ecológica isotérmica" class="img-fluid">
+  <div class="col-md-6">
+    <div class="d-flex justify-content-center alig-items-center" >
+      <img src="../static/IMAGENES/beiproduct.png" alt="Info_BEI" class="d-flex img-fluid" 
+      style="border-radius: 1px; margin-top: 25%; margin-bottom: 25%; max-width: 100%; height: auto;">
+      <img src="../static/IMAGENES/beiproduct2.png" alt="Info_BEI" class="d-flex img-fluid" style="border-radius: 1px; margin-top: 25%; margin-bottom: 25%; max-width: 100%; height: auto;">    
+    
     </div>
+
   </div>
   
   <div class="col-md-6">
     <div class="producto-info">
       <h2><strong>Bolsa Ecológica Isotérmica</strong></h2>
-      <h3 class="precio">$20.000 COP</h3>
-  
-      <div class="form-group">
-        <label for="cantidad">Cantidad:</label>
-        <input  title="input" type="number" class="form-control" id="input_1" value="1" min="1" max="5">
-      </div>
-  
-      <div class="form-group">
-        <label for="talle">Tamaño:</label>
-        <select title="selector" class="form-control" id="input_2">
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-        </select>
+      <h3 class="precio">$14.000 COP</h3>
+      
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input  title="input" type="number" class="form-control" id="input_1" value="1" min="1" max="5">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="talle">Tamaño:</label>
+            <select title="selector" class="form-control" id="input_2">
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="producto-acciones">
         <a href="/pago"><button type="button" class="btn_1" id="button_1"> <strong>Comprar ya</strong> </button></a>
-        <button href="/agregar_carrito" type="button" class="btn_2" id="button_2"><strong>Agregar al carrito</strong></button>
+        <button href="/carrito" type="button" class="btn_2" id="button_2"><strong>Agregar al carrito</strong></button>
       </div> 
       <div class="descripcion-cont">
         <p class="descripcion">
