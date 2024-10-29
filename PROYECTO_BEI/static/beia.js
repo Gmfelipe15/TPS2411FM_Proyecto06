@@ -52,6 +52,26 @@ sendButton.addEventListener("click", (e) => {
     });
 });
 
+// Respuesta inteligente para peticiones no acordes
+if (!response) {
+    chatLog.innerHTML += `<p><strong>Beibot:</strong> Lo siento, no puedo ayudar con eso. ¿Puedes preguntar algo diferente?</p>`;
+}
+
+chatLog.scrollTop = chatLog.scrollHeight;  // Desplazar el chat hacia abajo
+
+// Minimizar el chatbot
+minimizeChatbotButton.addEventListener("click", () => {
+if (isMinimized) {
+chatbotContainer.style.height = 'auto'; // Restaurar el tamaño
+minimizeChatbotButton.textContent = '-'; // Cambiar el texto del botón
+} else {
+chatbotContainer.style.height = '50px'; // Minimizar el tamaño
+chatLog.style.display = 'none'; // Ocultar el log del chat
+minimizeChatbotButton.textContent = '+'; // Cambiar el texto del botón
+}
+isMinimized = !isMinimized; // Alternar el estado
+});
+
 // Cerrar el chatbot manualmente
 closeChatbotButton.addEventListener("click", () => {
     chatbotContainer.style.display = 'none';

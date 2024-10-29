@@ -16,8 +16,9 @@
 <!-- Chatbot flotante -->
 <div id="chatbot-container">
   <div id="chatbot-header">
-      <h3>Beibot</h3>
-      <button id="close-chatbot">X</button>
+    <h3>Beibot</h3>
+    <button id="minimize-chatbot">-</button>
+    <button id="close-chatbot">X</button>
   </div>
   <div id="chatbot-content">
       <div id="chat-log"></div>
@@ -63,33 +64,41 @@
 
       <div class="row"> <!--FILA-->
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-          <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+          <img src="../static/IMAGENES/beiproduct.png" alt="Bolsa ecológica blanca" class="card-img-top" max-width="100%" height="auto">
           <div class="card-body">
             <h5 class="card-title">BEI - Blanca</h5>
-            <p class="card-text">$20.000 COP</p>
+            <p class="card-text">$14.000 COP</p>
             <a href="/producto" class="btn btn-success">Ver más</a>
           </div>
         </div>
 
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-          <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+          <img src="../static/IMAGENES/beiproduct.png" alt="Bolsa ecológica blanca" class="card-img-top" max-width="100%" height="auto">
           <div class="card-body">
             <h5 class="card-title">BEI - Blanca</h5>
-            <p class="card-text">$20.000 COP</p>
+            <p class="card-text">$14.000 COP</p>
             <a href="/producto" class="btn btn-success">Ver más</a>
           </div>
         </div>
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-          <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+          <img src="../static/IMAGENES/beiproduct.png" alt="Bolsa ecológica blanca" class="card-img-top" max-width="100%" height="auto">
           <div class="card-body">
             <h5 class="card-title">BEI - Blanca</h5>
-            <p class="card-text">$20.000 COP</p>
+            <p class="card-text">$14.000 COP</p>
+            <a href="/producto" class="btn btn-success">Ver más</a>
+          </div>
+        </div>
+        <div class="col-sm-5 card"> <!--COLUMNA1-->
+          <img src="../static/IMAGENES/beiproduct.png" alt="Bolsa ecológica blanca" class="card-img-top" max-width="100%" height="auto">
+          <div class="card-body">
+            <h5 class="card-title">BEI - Blanca</h5>
+            <p class="card-text">$14.000 COP</p>
             <a href="/producto" class="btn btn-success">Ver más</a>
           </div>
         </div>
 
         <div class="col-sm-5 card"> <!--COLUMNA1-->
-            <img src="../static/IMAGENES/07-BOLSITA.jpg" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
+            <img src="../static/IMAGENES/beiproduct2.png" alt="Bolsa ecológica blanca" class="card-img-top" height="100">
           {% for producto in productos %}
             <div class="producto">
               <h2>{{ producto.nombre }}</h2>
@@ -111,14 +120,25 @@
       </div>
       <div class="text">
         <h4>
-          
-Las bolsas ecológicas son cruciales para proteger el medio ambiente, ya que son biodegradables o reciclables y ayudan a reducir la contaminación causada por las bolsas de plástico, que tardan cientos de años en descomponerse. Son más duraderas, lo que permite su reutilización y reduce el desperdicio, ahorrando dinero a los consumidores. Usar bolsas ecológicas contribuye a cuidar el planeta y disminuir nuestro impacto ambiental.
-        </h4>    
+          Las bolsas ecológicas son cruciales para proteger el medio ambiente, 
+          ya que son biodegradables o reciclables y ayudan a reducir la contaminación 
+          causada por las bolsas de plástico, que tardan cientos de años en descomponerse.
+         Son más duraderas, lo que permite su reutilización y reduce el desperdicio,
+          ahorrando dinero a los consumidores. Usar bolsas ecológicas contribuye a cuidar
+          el planeta y disminuir nuestro impacto ambiental.
+        </h4>
+        <div class="d-flex justify-content-center">
+          <img src="../static/IMAGENES/bolsabei.png" alt="Info_BEI" class="d-flex img-fluid" style="border-radius: 10px; margin-left: 10px; margin-bottom: 20px; margin-top: 25px; max-width: 100%; height: auto;">    
+          <br><br>
+        </div>
       </div>
       <br>
       <div class="row">
         <h2 class="home">Más info:</h2>
         <br>
+        <div class="d-flex justify-content-center">
+          
+        </div>
         <div class="col-md-4">
           <div class="container-fluid">
             <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d351.4525553613848!2d-74.0951251671616!3d4.729760054272263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f8547f94ea9b3%3A0x9b30751148637f53!2sIED%20Gonzalo%20Arango!5e0!3m2!1ses-419!2sco!4v1721913132365!5m2!1ses-419!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -136,10 +156,8 @@ Las bolsas ecológicas son cruciales para proteger el medio ambiente, ya que son
 
     </div>
 </div>
-<script src="{{ url_for('static', filename='beia.js') }}"></script>
-
-
 </body>
+  <script src="{{ url_for('static', filename='beia.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </html>
 {% endblock %}
