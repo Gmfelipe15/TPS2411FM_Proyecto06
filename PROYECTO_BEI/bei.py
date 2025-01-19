@@ -192,7 +192,8 @@ def actualizar_usuario(id):
         telefono = request.form ['telefono']
         tipo = request.form ['tipo']
         cur = mysql.connection.cursor()
-        cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s, tipo = %s WHERE id = %s', (name, email, password, direccion, telefono, tipo, id))
+        cur.execute('UPDATE signup SET name = %s, email = %s, password = %s, direccion = %s, telefono = %s, tipo = %s WHERE id = %s', 
+                    (name, email, password, direccion, telefono, tipo, id))
         mysql.connection.commit()
         flash('Usuario actualizado satisfactoriamente')
         return redirect(url_for('mostrar_usuarios')) #Al terminar de editar redireccionará a la tabla de usuarios esto poniendo el def que se puso anteriormente
